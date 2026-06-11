@@ -931,7 +931,9 @@ function toggleChat() {
 }
 
 function initChat() {
-  addBotMsg('¡Hola! Soy el asistente de Agencia Directa 👋 Cuéntame, ¿en qué puedo ayudarte hoy?');
+  var greeting = '¡Hola! Soy el asistente de Agencia Directa 👋 Cuéntame, ¿en qué puedo ayudarte hoy?';
+  addBotMsg(greeting);
+  chatHistory.push({role: 'assistant', content: greeting});
 }
 
 function addBotMsg(text) {
