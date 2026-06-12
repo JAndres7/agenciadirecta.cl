@@ -58,8 +58,8 @@ h1 span{color:var(--c1)}
 .hero-sub{font-size:17px;color:var(--text2);margin-bottom:32px;line-height:1.75}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}
 /* mini trust bar bajo CTAs — optimización artículo */
-.trust-bar{display:flex;gap:12px;flex-wrap:nowrap}
-.trust-item{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--text3)}
+.trust-bar{display:flex;gap:16px;flex-wrap:nowrap}
+.trust-item{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text3)}
 .trust-item svg{flex-shrink:0}
 /* carrusel vitrina */
 .showcase{position:relative;border-radius:16px;overflow:hidden;background:#000;aspect-ratio:1/1;width:100%;max-width:1080px;margin:0 auto;box-shadow:0 8px 40px rgba(0,0,0,.5)}
@@ -347,21 +347,6 @@ select option{background:#0D1628;color:var(--text)}
         <a href="#formulario" class="btn btn-primary">Solicitar Auditoría Gratis</a>
         <a href="https://wa.me/56953168857?text=Hola%2C%20vengo%20desde%20el%20sitio%20web%20de%20Agencia%20Directa%20y%20me%20gustar%C3%ADa%20solicitar%20una%20auditor%C3%ADa%20gratis." target="_blank" class="btn" style="background:#25D366;color:#fff;border:none">Chatea con nosotros</a>
       </div>
-      <!-- Trust bar — prueba social inmediata -->
-      <div class="trust-bar">
-        <span class="trust-item">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Información actualizada
-        </span>
-        <span class="trust-item">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          Respondemos en menos de 24 hrs.
-        </span>
-        <span class="trust-item">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-          Sin compromiso
-        </span>
-      </div>
     </div>
     <div class="hero-visual">
       <div class="showcase" id="showcase">
@@ -377,6 +362,21 @@ select option{background:#0D1628;color:var(--text)}
           </div>
         </div>
         <div class="showcase-dots" id="showcaseDots"></div>
+      </div>
+      <!-- Trust bar bajo el slider -->
+      <div class="trust-bar" style="margin-top:14px;justify-content:center">
+        <span class="trust-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Información actualizada
+        </span>
+        <span class="trust-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Respondemos en menos de 24 hrs.
+        </span>
+        <span class="trust-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Sin compromiso
+        </span>
       </div>
     </div>
   </div>
