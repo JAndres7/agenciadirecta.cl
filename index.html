@@ -1,11 +1,29 @@
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CL">
 <head>
+<!-- Google Tag Manager -->
+<script>window.dataLayer=window.dataLayer||[];(function(){function l(){(function(w,d,s,i){var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);})(window,document,'script','GTM-5MHF2J2G');}if(window.addEventListener){window.addEventListener('load',l);}else{window.attachEvent('onload',l);}})();</script>
+<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agencia Directa — Marketing, Automatización e IA</title>
+<title>Agencia Directa — Marketing, Automatización e IA | Antofagasta</title>
+<meta name="description" content="Agencia de marketing digital, automatización e inteligencia artificial en Antofagasta. Escalamos marcas con sistemas que generan clientes de forma predecible.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://agenciadirecta.cl/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://agenciadirecta.cl/">
+<meta property="og:title" content="Agencia Directa — Marketing, Automatización e IA">
+<meta property="og:description" content="Escalamos marcas con sistemas de marketing digital, automatización e inteligencia artificial. Auditoría gratuita para tu negocio.">
+<meta property="og:image" content="https://agenciadirecta.cl/assets/recurso8.png">
+<meta property="og:locale" content="es_CL">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agencia Directa — Marketing, Automatización e IA">
+<meta name="twitter:description" content="Escalamos marcas con sistemas de marketing digital, automatización e inteligencia artificial.">
+<meta name="twitter:image" content="https://agenciadirecta.cl/assets/recurso8.png">
 <link rel="icon" type="image/png" href="favicon.png">
+<link rel="preload" as="image" href="assets/recurso9.webp">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -58,22 +76,26 @@ h1 span{color:var(--c1)}
 .hero-sub{font-size:17px;color:var(--text2);margin-bottom:32px;line-height:1.75}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}
 /* mini trust bar bajo CTAs — optimización artículo */
-.trust-bar{display:flex;gap:20px;flex-wrap:wrap}
-.trust-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text3)}
+.trust-bar{display:flex;gap:16px;flex-wrap:nowrap}
+.trust-item{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text3)}
 .trust-item svg{flex-shrink:0}
-/* dashboard */
-.dash{background:rgba(255,255,255,.04);border:1px solid var(--bord);border-radius:16px;padding:24px;backdrop-filter:blur(12px)}
-.dash-dots{display:flex;gap:7px;margin-bottom:18px}
-.dot{width:10px;height:10px;border-radius:50%}
-.dot:nth-child(1){background:#FF5F57}.dot:nth-child(2){background:#FEBC2E}.dot:nth-child(3){background:#28C840}
-.metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
-.mc{background:rgba(79,159,240,.07);border:1px solid var(--bord);border-radius:10px;padding:14px}
-.mc-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
-.mc-val{font-size:26px;font-weight:800;color:var(--c1)}
-.mc-trend{font-size:11px;color:var(--green);margin-top:3px}
-.bars{display:flex;align-items:flex-end;gap:5px;height:52px;margin-top:14px}
-.bar{flex:1;background:rgba(79,159,240,.25);border-radius:3px 3px 0 0;transition:background .2s}
-.bar:nth-child(4){background:rgba(79,159,240,.5)}.bar:nth-child(6){background:var(--c1)}
+/* carrusel vitrina */
+.showcase{position:relative;border-radius:16px;overflow:hidden;background:#000;aspect-ratio:1/1;width:100%;max-width:1080px;margin:0 auto;box-shadow:0 8px 40px rgba(0,0,0,.5)}
+.showcase-track{display:flex;height:100%;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.showcase-slide{min-width:100%;height:100%;position:relative;display:flex;align-items:center;justify-content:center;background:#0a1020}
+.showcase-slide img{width:100%;height:100%;object-fit:contain;display:block;background:#0a1020}
+.showcase-slide video{width:100%;height:100%;object-fit:cover;display:block}
+.showcase-slide .audio-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;width:100%;height:100%;padding:24px}
+.showcase-slide .audio-placeholder svg{opacity:.4}
+.showcase-slide .audio-placeholder audio{width:100%}
+.showcase-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:2}
+.showcase-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer;transition:background .3s,transform .3s;border:none;padding:0}
+.showcase-dot.active{background:#fff;transform:scale(1.3)}
+.showcase-prev,.showcase-next{position:absolute;top:50%;transform:translateY(-50%);z-index:2;background:rgba(0,0,0,.45);border:none;color:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;backdrop-filter:blur(4px)}
+.showcase-prev{left:10px}.showcase-next{right:10px}
+.showcase-prev:hover,.showcase-next:hover{background:rgba(0,0,0,.75)}
+.showcase-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;height:100%;color:var(--text3);font-size:13px;text-align:center;padding:24px}
+.showcase-empty svg{opacity:.3}
 
 /* ── STATS ── */
 .stats-sec{background:var(--bg2);padding:60px 0;border-top:1px solid var(--bord);border-bottom:1px solid var(--bord)}
@@ -160,6 +182,11 @@ h1 span{color:var(--c1)}
 .b-text h4{font-size:14px;font-weight:700;color:var(--text)}
 .b-text p{font-size:13px;color:var(--text2);margin:0}
 form{background:var(--surf);border:1px solid var(--bord);border-radius:18px;padding:36px}
+.phone-wrap{display:flex;border:1.5px solid rgba(79,159,240,.2);border-radius:9px;overflow:hidden;transition:border-color .2s,box-shadow .2s;background:rgba(9,15,28,.6)}
+.phone-wrap:focus-within{border-color:var(--c1);box-shadow:0 0 0 3px rgba(79,159,240,.12)}
+.phone-prefix{display:flex;align-items:center;gap:6px;padding:0 12px;background:rgba(79,159,240,.07);border-right:1.5px solid rgba(79,159,240,.2);font-size:14px;font-weight:600;color:var(--text);white-space:nowrap;user-select:none}
+.phone-prefix span{font-size:18px;line-height:1}
+.phone-wrap input{border:none;border-radius:0;background:transparent;box-shadow:none;padding:12px 12px}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .fg{margin-bottom:18px}
 label{display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px}
@@ -199,6 +226,40 @@ select option{background:#0D1628;color:var(--text)}
 .wa-btn{position:fixed;bottom:28px;right:28px;z-index:998;background:#25D366;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);text-decoration:none;transition:transform .2s}
 .wa-btn:hover{transform:scale(1.1)}
 
+/* ── AI Chat Widget ── */
+#chat-toggle{position:fixed;bottom:28px;left:28px;z-index:998;background:var(--c1);width:54px;height:54px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(79,159,240,.5);transition:transform .2s}
+#chat-toggle:hover{transform:scale(1.1)}
+#chat-panel{position:fixed;bottom:94px;left:28px;z-index:997;width:340px;max-height:520px;background:var(--bg2);border:1px solid var(--bord2);border-radius:16px;display:none;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,.5);overflow:hidden}
+.chat-head{background:linear-gradient(135deg,var(--c3),var(--c4));padding:14px 16px;display:flex;align-items:center;gap:10px}
+.chat-head-avatar{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:18px}
+.chat-head-info{flex:1}
+.chat-head-name{font-size:14px;font-weight:700;color:#fff}
+.chat-head-status{font-size:11px;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:4px}
+.chat-head-status::before{content:'';width:6px;height:6px;background:#22C55E;border-radius:50%;display:inline-block}
+.chat-close{background:none;border:none;color:rgba(255,255,255,.7);font-size:20px;cursor:pointer;padding:0;line-height:1}
+#chat-messages{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;min-height:200px;max-height:320px}
+.msg{max-width:85%;padding:10px 13px;border-radius:12px;font-size:13px;line-height:1.55}
+.msg-bot{background:var(--surf);color:var(--text);border-bottom-left-radius:3px;align-self:flex-start}
+.msg-user{background:var(--c1);color:#fff;border-bottom-right-radius:3px;align-self:flex-end}
+.msg-typing{background:var(--surf);align-self:flex-start;padding:12px 16px}
+.typing-dots{display:flex;gap:4px}
+.typing-dots span{width:6px;height:6px;background:var(--text3);border-radius:50%;animation:bounce 1.2s infinite}
+.typing-dots span:nth-child(2){animation-delay:.2s}
+.typing-dots span:nth-child(3){animation-delay:.4s}
+@keyframes bounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-6px)}}
+.chat-input-row{padding:10px;border-top:1px solid var(--bord);display:flex;gap:6px;align-items:center;background:var(--bg2)}
+#chat-input{flex:1;background:var(--surf);border:1.5px solid var(--bord);border-radius:20px;padding:8px 14px;font-size:13px;color:var(--text);font-family:inherit;outline:none}
+#chat-input:focus{border-color:var(--c1)}
+.chat-btn{background:none;border:none;cursor:pointer;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s;font-size:16px;flex-shrink:0}
+.chat-btn:hover{background:rgba(79,159,240,.15)}
+.chat-btn-send{background:var(--c1);color:#fff}
+.chat-btn-send:hover{background:var(--c2)}
+.chat-btn-mic.active{background:rgba(239,68,68,.2);color:#EF4444}
+.chat-tts-bar{padding:6px 10px;border-top:1px solid var(--bord);display:flex;align-items:center;justify-content:flex-end;gap:6px;font-size:11px;color:var(--text3)}
+.tts-toggle{background:none;border:1px solid var(--bord);border-radius:10px;padding:3px 8px;font-size:11px;color:var(--text3);cursor:pointer;transition:all .2s}
+.tts-toggle.on{border-color:var(--c1);color:var(--c1);background:rgba(79,159,240,.08)}
+@media(max-width:400px){#chat-panel{width:calc(100vw - 20px);left:10px}}
+
 /* ── Sticky mobile CTA — optimización artículo punto 4 ── */
 .sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:997;background:rgba(9,15,28,.95);border-top:1px solid var(--bord);padding:12px 16px;backdrop-filter:blur(12px)}
 .sticky-cta .btn{width:100%;text-align:center;font-size:15px;padding:13px}
@@ -227,7 +288,8 @@ select option{background:#0D1628;color:var(--text)}
   .hero-grid,.offer-grid,.form-grid,.srv-grid{grid-template-columns:1fr}
   .stats-row,.pain-grid,.res-grid,.test-grid{grid-template-columns:repeat(2,1fr)}
   .hero{min-height:auto;padding:72px 0}
-  .hero-visual{display:none}
+  .hero-visual{display:block;margin-top:32px}
+  .showcase{max-width:600px}
   .steps{grid-template-columns:1fr;gap:0}
   .steps::before{display:none}
   .step{display:grid;grid-template-columns:60px 1fr;grid-template-rows:auto auto;column-gap:20px;text-align:left;padding-bottom:32px;position:relative}
@@ -250,6 +312,7 @@ select option{background:#0D1628;color:var(--text)}
   .stats-sec{padding:44px 0}
   .wrap{padding:0 16px}
   .hero{padding:56px 0}
+  .showcase{max-width:100%}
   h1{font-size:clamp(26px,7vw,36px)}
   h1 br,h2 br{display:none}
   .hero-sub{font-size:16px}
@@ -287,6 +350,9 @@ select option{background:#0D1628;color:var(--text)}
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MHF2J2G" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- 1. HERO -->
 <section class="hero" id="inicio">
@@ -294,23 +360,42 @@ select option{background:#0D1628;color:var(--text)}
   <div class="hero-grid">
     <div>
       <div class="logo-wrap">
-        <img src="assets/logo-agencia-directa.png" alt="Directa — Marketing y Automatización Digital" class="site-logo">
+        <img src="assets/recurso8.webp" alt="Directa — Marketing y Automatización Digital" class="site-logo">
       </div>
-      <h1>Escalamos marcas con sistemas de <span>automatización e inteligencia artificial</span>.</h1>
-      <p class="hero-sub">Ayudamos a empresas a aumentar ventas, optimizar procesos y captar clientes con soluciones personalizadas de marketing y automatización.</p>
+      <h1>Escalamos marcas con sistemas de <span>automatización e inteligencia artificial.</span></h1>
+      <p class="hero-sub">Agencia de marketing digital en Antofagasta, Chile. Ayudamos a empresas a aumentar ventas, optimizar procesos y captar clientes con soluciones personalizadas para cada rubro e industria.</p>
       <div class="hero-ctas">
-        <a href="#formulario" class="btn btn-primary">Solicitar Presupuesto</a>
-        <a href="#formulario" class="btn btn-outline">Agendar Llamada</a>
+        <a href="#formulario" class="btn btn-primary">Solicitar Auditoría Gratis</a>
+        <a href="https://wa.me/56953168857?text=Hola%2C%20vengo%20desde%20el%20sitio%20web%20de%20Agencia%20Directa%20y%20me%20gustar%C3%ADa%20solicitar%20una%20auditor%C3%ADa%20gratis." target="_blank" class="btn" style="background:#25D366;color:#fff;border:none">Chatea con nosotros</a>
       </div>
-      <!-- Trust bar — prueba social inmediata -->
-      <div class="trust-bar">
+    </div>
+    <div class="hero-visual">
+      <div class="showcase" id="showcase">
+        <div class="showcase-track" id="showcaseTrack">
+          <div class="showcase-slide">
+            <img src="assets/recurso9.webp" alt="Recurso 9">
+          </div>
+          <div class="showcase-slide">
+            <img src="assets/recurso10.webp" alt="Recurso 10" loading="lazy">
+          </div>
+          <div class="showcase-slide">
+            <img src="assets/recurso11.webp" alt="Recurso 11" loading="lazy">
+          </div>
+          <div class="showcase-slide">
+            <img src="assets/hablemos-directo.webp" alt="Hablemos Directo" loading="lazy">
+          </div>
+        </div>
+        <div class="showcase-dots" id="showcaseDots"></div>
+      </div>
+      <!-- Trust bar bajo el slider -->
+      <div class="trust-bar" style="margin-top:14px;justify-content:center">
         <span class="trust-item">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          +120 clientes activos
+          Información actualizada
         </span>
         <span class="trust-item">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          Respuesta en &lt; 5 min
+          Respondemos en menos de 24 hrs.
         </span>
         <span class="trust-item">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
@@ -318,60 +403,24 @@ select option{background:#0D1628;color:var(--text)}
         </span>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="dash">
-        <div class="dash-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-        <div class="metrics">
-          <div class="mc"><div class="mc-label">Leads este mes</div><div class="mc-val">847</div><div class="mc-trend">↑ +34%</div></div>
-          <div class="mc"><div class="mc-label">Conversión</div><div class="mc-val">12.4%</div><div class="mc-trend">↑ +2.1pp</div></div>
-          <div class="mc"><div class="mc-label">ROAS</div><div class="mc-val">4.8x</div><div class="mc-trend">↑ Meta superada</div></div>
-          <div class="mc"><div class="mc-label">Automatizaciones</div><div class="mc-val">23</div><div class="mc-trend">activas 24/7</div></div>
-        </div>
-        <div class="bars">
-          <div class="bar" style="height:35%"></div><div class="bar" style="height:52%"></div>
-          <div class="bar" style="height:45%"></div><div class="bar" style="height:72%"></div>
-          <div class="bar" style="height:88%"></div><div class="bar" style="height:76%"></div>
-          <div class="bar" style="height:100%"></div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 </section>
 
-<!-- 2. CREDIBILIDAD -->
-<section class="stats-sec">
-<div class="wrap">
-  <div class="stats-row">
-    <div data-aos><div class="stat-num">+120</div><div class="stat-lbl">Clientes atendidos</div></div>
-    <div data-aos><div class="stat-num">+380</div><div class="stat-lbl">Automatizaciones implementadas</div></div>
-    <div data-aos><div class="stat-num">+50K</div><div class="stat-lbl">Leads generados</div></div>
-    <div data-aos><div class="stat-num">+47%</div><div class="stat-lbl">Incremento promedio en ventas</div></div>
-  </div>
-  <div class="logos">
-    <div class="logo-ph">EMPRESA A</div><div class="logo-ph">EMPRESA B</div>
-    <div class="logo-ph">EMPRESA C</div><div class="logo-ph">EMPRESA D</div>
-    <div class="logo-ph">EMPRESA E</div>
-  </div>
-  <div class="quote-bar">
-    <p>"No hacemos marketing para ver métricas bonitas. <strong>Lo hacemos para generar negocio.</strong>"</p>
-  </div>
-</div>
-</section>
 
 <!-- 3. PROBLEMA -->
 <section class="sec problem-sec">
 <div class="wrap">
-  <span class="eyebrow">El problema real</span>
+  <span class="eyebrow">El problema</span>
   <h2>Tu negocio no necesita más contenido.<br>Necesita un sistema que genere clientes.</h2>
   <p class="sub">Si algo no está funcionando, probablemente es uno de estos puntos.</p>
   <div class="pain-grid">
-    <div class="pain-card" data-aos><div class="p-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="p-text"><h4>Publicidad sin resultados claros</h4><p>Gastas en pauta pero no puedes rastrear qué campañas generan ventas reales.</p></div></div>
+    <div class="pain-card" data-aos><div class="p-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="p-text"><h4>Publicidad sin una respuesta clara.</h4><p>Gastas en campañas, pero no sabes cuáles se están convirtiendo en ventas.</p></div></div>
     <div class="pain-card" data-aos><div class="p-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="p-text"><h4>Procesos manuales que consumen tiempo</h4><p>Tu equipo dedica horas a tareas repetitivas que deberían estar automatizadas.</p></div></div>
-    <div class="pain-card" data-aos><div class="p-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg></div><div class="p-text"><h4>Leads que no se convierten</h4><p>Recibes contactos pero no tienes un sistema para nutrirlos y cerrarlos.</p></div></div>
-    <div class="pain-card" data-aos><div class="p-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13.73 21a2 2 0 0 1-3.46 0"/><path d="M18.63 13A17.89 17.89 0 0 1 18 8"/><path d="M6.26 6.26A5.86 5.86 0 0 0 6 8c0 7-3 9-3 9h14"/><path d="M18 8a6 6 0 0 0-9.33-5"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div><div class="p-text"><h4>Sin seguimiento automatizado</h4><p>Cada lead depende de que alguien lo recuerde. Los prospectos se enfrían y se pierden.</p></div></div>
-    <div class="pain-card" data-aos><div class="p-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><div class="p-text"><h4>Marketing que depende de ti</h4><p>Si tú no empujas, nada avanza. Tu crecimiento no puede depender de una sola persona.</p></div></div>
-    <div class="pain-card" data-aos><div class="p-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></div><div class="p-text"><h4>Resultados impredecibles</h4><p>No sabes qué mes vendrá bien. Sin sistema, no hay previsibilidad ni escalabilidad.</p></div></div>
+    <div class="pain-card" data-aos><div class="p-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg></div><div class="p-text"><h4>Los contactos llegan, pero las ventas no.</h4><p>Recibes consultas, pero no tienes un proceso para acompañarlas hasta la compra.</p></div></div>
+    <div class="pain-card" data-aos><div class="p-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13.73 21a2 2 0 0 1-3.46 0"/><path d="M18.63 13A17.89 17.89 0 0 1 18 8"/><path d="M6.26 6.26A5.86 5.86 0 0 0 6 8c0 7-3 9-3 9h14"/><path d="M18 8a6 6 0 0 0-9.33-5"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div><div class="p-text"><h4>Te llegan interesados, pero no siempre reciben respuesta a tiempo.</h4><p>Sin un seguimiento organizado, el interés se enfría y las oportunidades se pierden.</p></div></div>
+    <div class="pain-card" data-aos><div class="p-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><div class="p-text"><h4>Tu negocio depende demasiado de ti.</h4><p>Cuando todo pasa por tus manos, escalar se vuelve cada vez más complicado.</p></div></div>
+    <div class="pain-card" data-aos><div class="p-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></div><div class="p-text"><h4>Los resultados cambian todo el tiempo.</h4><p>Sin una estrategia consistente, es difícil generar crecimiento de forma predecible.</p></div></div>
   </div>
 </div>
 </section>
@@ -381,15 +430,15 @@ select option{background:#0D1628;color:var(--text)}
 <div class="wrap">
   <span class="eyebrow">La solución</span>
   <h2>Sistemas que trabajan para tu negocio,<br>incluso cuando tú no estás.</h2>
-  <p class="sub">No vendemos servicios sueltos. Construimos sistemas integrados que generan resultados predecibles.</p>
+  <p class="sub">No se trata de hacer más cosas. Se trata de que todo trabaje junto.</p>
   <div class="srv-grid">
     <div class="srv-card" data-aos><div class="srv-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="5" x2="9" y2="3"/><line x1="15" y1="5" x2="15" y2="3"/><line x1="9" y1="21" x2="9" y2="19"/><line x1="15" y1="21" x2="15" y2="19"/><line x1="19" y1="9" x2="21" y2="9"/><line x1="19" y1="15" x2="21" y2="15"/><line x1="3" y1="9" x2="5" y2="9"/><line x1="3" y1="15" x2="5" y2="15"/></svg></div><h3>Automatización e IA</h3><p>Implementamos sistemas inteligentes para automatizar procesos, seguimiento comercial y atención al cliente. Tu negocio opera 24/7 sin intervención constante.</p></div>
-    <div class="srv-card" data-aos><div class="srv-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div><h3>Marketing Performance</h3><p>Creamos campañas enfocadas en adquisición de clientes y retorno sobre inversión. Cada peso invertido tiene trazabilidad y optimización continua.</p></div>
-    <div class="srv-card" data-aos><div class="srv-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><h3>Embudos y Conversión</h3><p>Diseñamos funnels y landing pages optimizadas para convertir tráfico en ventas. Cada elemento reduce fricción y maximiza conversión.</p></div>
-    <div class="srv-card" data-aos><div class="srv-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><h3>Sistemas de Captación</h3><p>Construimos sistemas predecibles para generar leads constantemente. Flujo continuo de prospectos calificados sin depender de referencias.</p></div>
+    <div class="srv-card" data-aos><div class="srv-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div><h3>Publicidad que genera clientes.</h3><p>Creamos campañas enfocadas en atraer oportunidades reales y mejorar los resultados de forma constante.</p></div>
+    <div class="srv-card" data-aos><div class="srv-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><h3>Convierte más visitas en clientes.</h3><p>Creamos páginas y procesos pensados para que más personas den el siguiente paso y compren.</p></div>
+    <div class="srv-card" data-aos><div class="srv-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><h3>Haz que los nuevos clientes lleguen de forma constante.</h3><p>Construimos un proceso que atrae oportunidades de negocio de manera predecible.</p></div>
   </div>
   <div class="sec-cta">
-    <a href="#formulario" class="btn btn-primary">Quiero un presupuesto personalizado</a>
+    <a href="#formulario" class="btn btn-primary">Solicitar Auditoría Gratis</a>
   </div>
 </div>
 </section>
@@ -397,7 +446,7 @@ select option{background:#0D1628;color:var(--text)}
 <!-- 5. CÓMO FUNCIONA -->
 <section class="sec how-sec">
 <div class="wrap">
-  <span class="eyebrow">Proceso</span>
+  <span class="eyebrow">El proceso</span>
   <h2>Así es como trabajamos</h2>
   <p class="sub">Sin procesos complicados. En tres pasos tienes un sistema funcionando para tu negocio.</p>
   <div class="steps">
@@ -423,23 +472,23 @@ select option{background:#0D1628;color:var(--text)}
 <!-- 6. RESULTADOS -->
 <section class="sec results-sec">
 <div class="wrap">
-  <span class="eyebrow">Casos reales</span>
-  <h2 style="margin-bottom:38px">Resultados que hablan solos</h2>
+  <span class="eyebrow">El resultado</span>
+  <h2 style="margin-bottom:38px">Ganas tiempo, ganas dinero y ganas clientes.</h2>
   <div class="res-grid">
     <div class="res-card" data-aos>
       <div class="res-num">+214%</div>
-      <div class="res-title">Incremento en leads</div>
-      <div class="res-desc">"Implementamos un sistema de captación y seguimiento automatizado. En 60 días, los leads se triplicaron."</div>
+      <div class="res-title">más oportunidades de negocio.</div>
+      <div class="res-desc">"Implementamos un sistema para atraer nuevos contactos y dar seguimiento a cada oportunidad."</div>
     </div>
     <div class="res-card" data-aos>
       <div class="res-num">32h</div>
-      <div class="res-title">Horas semanales ahorradas</div>
-      <div class="res-desc">"Reducimos 32 horas operativas por semana mediante automatización de procesos comerciales y administrativos."</div>
+      <div class="res-title">menos de tareas repetitivas cada semana.</div>
+      <div class="res-desc">"Lo que antes requería horas de trabajo manual ahora ocurre de forma automática."</div>
     </div>
     <div class="res-card" data-aos>
       <div class="res-num">2.1x</div>
-      <div class="res-title">Conversión duplicada</div>
-      <div class="res-desc">"Rediseñamos el funnel y las campañas pagadas. La tasa de conversión pasó de 4.8% a 10.3% en 45 días."</div>
+      <div class="res-title">más oportunidades generadas.</div>
+      <div class="res-desc">"Optimizamos el proceso completo y duplicamos la cantidad de personas que darán el siguiente paso."</div>
     </div>
   </div>
 </div>
@@ -473,7 +522,7 @@ select option{background:#0D1628;color:var(--text)}
   <div class="offer-grid">
     <div>
       <span class="eyebrow">Sin compromiso</span>
-      <h2>Solicita un presupuesto personalizado para tu negocio</h2>
+      <h2>Solicita una auditoría gratis y personalizada para tu negocio</h2>
       <p class="sub" style="margin-bottom:0">Analizamos tu situación actual y te entregamos una propuesta concreta con estrategia y roadmap de implementación.</p>
       <ul class="offer-list">
         <li>Auditoría inicial de tu negocio y canales</li>
@@ -487,7 +536,7 @@ select option{background:#0D1628;color:var(--text)}
       <span class="otag">Totalmente gratuito</span>
       <h3>Primera consulta sin costo</h3>
       <p class="note">Analizamos tu negocio y te mostramos exactamente cómo podemos ayudarte a crecer.</p>
-      <a href="#formulario" class="btn btn-primary" style="display:block;text-align:center;width:100%">Solicitar Presupuesto Ahora</a>
+      <a href="#formulario" class="btn btn-primary" style="display:block;text-align:center;width:100%">Solicitar Auditoría Gratis</a>
       <p class="small">Respondemos en menos de 5 minutos en horario hábil</p>
     </div>
   </div>
@@ -509,7 +558,7 @@ select option{background:#0D1628;color:var(--text)}
     <form id="leadForm" onsubmit="handleSubmit(event)">
       <div class="fast-badge">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        Respondemos en &lt; 5 min en horario hábil
+        Respondemos en menos de 24 hrs
       </div>
       <div class="frow">
         <div class="fg"><label for="nombre">Nombre *</label><input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required></div>
@@ -517,36 +566,35 @@ select option{background:#0D1628;color:var(--text)}
       </div>
       <div class="frow">
         <div class="fg"><label for="email">Email *</label><input type="email" id="email" name="email" placeholder="tu@empresa.com" required></div>
-        <div class="fg"><label for="whatsapp">WhatsApp *</label><input type="tel" id="whatsapp" name="whatsapp" placeholder="+52 55 1234 5678" required></div>
+        <div class="fg"><label for="whatsapp">WhatsApp *</label><div class="phone-wrap"><div class="phone-prefix"><span>🇨🇱</span>+56</div><input type="tel" id="whatsapp" name="whatsapp" placeholder="9 1234 5678" required></div></div>
       </div>
       <div class="fg">
         <label for="necesidad">¿Qué necesitas? *</label>
         <select id="necesidad" name="necesidad" required>
           <option value="">Selecciona una opción</option>
-          <option value="automatizacion">Automatización e IA</option>
-          <option value="marketing">Marketing Performance</option>
-          <option value="embudos">Embudos y Conversión</option>
-          <option value="captacion">Sistema de Captación de Leads</option>
-          <option value="integral">Solución integral</option>
+          <option value="web">Sitio web</option>
+          <option value="marketing">Marketing digital</option>
+          <option value="automatizacion">Automatización de procesos</option>
+          <option value="agente">Agente IA</option>
           <option value="otro">No sé por dónde empezar</option>
         </select>
       </div>
       <div class="fg">
-        <label for="presupuesto">Presupuesto aproximado mensual</label>
+        <label for="presupuesto">Presupuesto inicial aproximado</label>
         <select id="presupuesto" name="presupuesto">
           <option value="">Selecciona un rango</option>
-          <option value="menos500">Menos de $500 USD</option>
-          <option value="500-1500">$500 – $1,500 USD</option>
-          <option value="1500-3000">$1,500 – $3,000 USD</option>
-          <option value="3000-5000">$3,000 – $5,000 USD</option>
-          <option value="mas5000">Más de $5,000 USD</option>
+          <option value="menos500k">Menos de $500.000 CLP</option>
+          <option value="500k-1m">$500.000 – $1.000.000 CLP</option>
+          <option value="1m-2m">$1.000.000 – $2.000.000 CLP</option>
+          <option value="2m-5m">$2.000.000 – $5.000.000 CLP</option>
+          <option value="mas5m">Más de $5.000.000 CLP</option>
         </select>
       </div>
       <div class="fg">
         <label for="mensaje">Cuéntanos más (opcional)</label>
         <textarea id="mensaje" name="mensaje" placeholder="Describe brevemente tu situación actual y qué resultado buscas..."></textarea>
       </div>
-      <button type="submit" class="btn btn-primary btn-submit">Recibir Propuesta →</button>
+      <button type="submit" class="btn btn-primary btn-submit">Solicitar Auditoría Gratis →</button>
       <p class="disclaimer">Al enviar aceptas nuestra política de privacidad. Sin spam, prometido.</p>
     </form>
   </div>
@@ -561,7 +609,7 @@ select option{background:#0D1628;color:var(--text)}
   <div class="faq-list">
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">¿Trabajan con cualquier tipo de negocio? <span class="faq-arrow">▼</span></button>
-      <div class="faq-a"><div class="faq-a-inner">Trabajamos principalmente con empresas B2B, e-commerce y servicios que buscan escalar su adquisición de clientes. Si tienes un negocio establecido y quieres crecer de forma sistemática, somos el equipo indicado.</div></div>
+      <div class="faq-a"><div class="faq-a-inner">Trabajamos principalmente con empresas B2B y nuestros servicios se pueden integrar a cualquier industria. Si tienes un negocio y te has propuesto crecer de forma sistemática, somos el equipo indicado.</div></div>
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">¿Cuánto tarda la implementación? <span class="faq-arrow">▼</span></button>
@@ -570,10 +618,6 @@ select option{background:#0D1628;color:var(--text)}
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">¿Ofrecen soporte después de la implementación? <span class="faq-arrow">▼</span></button>
       <div class="faq-a"><div class="faq-a-inner">Sí. Todos nuestros proyectos incluyen un período de soporte post-lanzamiento. También ofrecemos planes de mantenimiento mensual para optimización continua y ajuste de campañas.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">¿Qué inversión mínima recomiendan? <span class="faq-arrow">▼</span></button>
-      <div class="faq-a"><div class="faq-a-inner">Para obtener resultados significativos, recomendamos una inversión mínima de $1,000 USD mensuales en honorarios de agencia, más presupuesto de pauta si aplica. Evaluamos cada caso en la primera consulta.</div></div>
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">¿Las soluciones son personalizadas o usan plantillas? <span class="faq-arrow">▼</span></button>
@@ -588,24 +632,71 @@ select option{background:#0D1628;color:var(--text)}
 <div class="wrap">
   <div class="closing-inner">
     <span class="eyebrow" style="text-align:center;display:block">¿Listo para crecer?</span>
-    <h2>Tu negocio necesita sistemas,<br>no más improvisación.</h2>
-    <p class="sub">Agenda una llamada o solicita un presupuesto y descubre cómo podemos ayudarte a crecer de forma predecible y escalable.</p>
+    <h2><span style="color:#fff">Tu negocio necesita sistemas,</span><br><span style="color:var(--c1)">no improvisaciones.</span></h2>
+    <p class="sub">Agenda una auditoría gratis y descubre cómo podemos ayudarte a crecer de forma predecible y escalable.</p>
     <div class="closing-ctas">
-      <a href="#formulario" class="btn btn-primary">Solicitar Presupuesto</a>
-      <a href="#formulario" class="btn btn-outline">Agendar Llamada</a>
+      <a href="#formulario" class="btn btn-primary">Solicitar Auditoría Gratis</a>
+      <a href="https://wa.me/56953168857?text=Hola%2C%20vengo%20desde%20el%20sitio%20web%20de%20Agencia%20Directa%20y%20me%20gustar%C3%ADa%20solicitar%20una%20auditor%C3%ADa%20gratis." target="_blank" class="btn" style="background:#25D366;color:#fff;border:none">Chatea con nosotros</a>
     </div>
   </div>
 </div>
 </section>
 
+<!-- Footer -->
+<footer style="background:#060C18;border-top:1px solid rgba(79,159,240,.1);padding:40px 0;margin-top:0">
+  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-start">
+    <div>
+      <p style="font-weight:700;color:#E8F2FF;margin-bottom:8px">Agencia Directa</p>
+      <p style="color:rgba(232,242,255,.5);font-size:13px;line-height:1.8">Agencia de marketing digital en Antofagasta, Chile<br>Marketing digital · Automatización · Agentes IA<br>contacto@agenciadirecta.cl</p>
+    </div>
+    <div>
+      <p style="font-weight:700;color:#E8F2FF;margin-bottom:8px">Servicios</p>
+      <p style="color:rgba(232,242,255,.5);font-size:13px;line-height:1.8">Sitio web profesional<br>Publicidad digital Antofagasta<br>Automatización de procesos<br>Agente IA para empresas</p>
+    </div>
+    <div>
+      <p style="font-weight:700;color:#E8F2FF;margin-bottom:8px">Contacto</p>
+      <p style="color:rgba(232,242,255,.5);font-size:13px;line-height:1.8">+56 9 5316 8857<br>Antofagasta, Chile<br><a href="https://agenciadirecta.cl" style="color:rgba(79,159,240,.8)">agenciadirecta.cl</a></p>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(79,159,240,.08)">
+    <p style="color:rgba(232,242,255,.3);font-size:12px;text-align:center">© 2026 Agencia Directa — Marketing digital, automatización e inteligencia artificial en Antofagasta, Chile</p>
+  </div>
+</footer>
+
 <!-- Sticky CTA móvil -->
 <div class="sticky-cta">
-  <a href="#formulario" class="btn btn-primary">Solicitar Presupuesto Gratis</a>
+  <a href="#formulario" class="btn btn-primary">Solicitar Auditoría Gratis</a>
 </div>
 
+<!-- AI Chat Widget -->
+<button id="chat-toggle" onclick="toggleChat()" title="Habla con nuestro agente IA">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+</button>
+<div id="chat-panel">
+  <div class="chat-head">
+    <div class="chat-head-avatar">🤖</div>
+    <div class="chat-head-info">
+      <div class="chat-head-name">Agente Directa IA</div>
+      <div class="chat-head-status">En línea ahora</div>
+    </div>
+    <button class="chat-close" onclick="toggleChat()">×</button>
+  </div>
+  <div id="chat-messages"></div>
+  <div class="chat-tts-bar">
+    <span>Voz:</span>
+    <button class="tts-toggle" id="tts-btn" onclick="toggleTts()">OFF</button>
+  </div>
+  <div class="chat-input-row">
+    <input id="chat-input" type="text" placeholder="Escribe tu consulta..." onkeydown="if(event.key==='Enter')sendChatMsg()">
+    <button class="chat-btn chat-btn-mic" id="mic-btn" onclick="toggleMic()" title="Hablar">🎤</button>
+    <button class="chat-btn chat-btn-send" onclick="sendChatMsg()" title="Enviar">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </div>
+</div>
 
 <!-- WhatsApp float -->
-<a href="https://wa.me/56953168857" class="wa-btn" target="_blank" title="Escríbenos por WhatsApp">
+<a href="https://wa.me/56953168857?text=Hola%2C%20vengo%20desde%20el%20sitio%20web%20de%20Agencia%20Directa%20y%20me%20gustar%C3%ADa%20solicitar%20una%20auditor%C3%ADa%20gratis." class="wa-btn" target="_blank" title="Escríbenos por WhatsApp">
   <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
@@ -622,19 +713,18 @@ function handleSubmit(e) {
   e.preventDefault();
   var f = e.target;
   var necesidadMap = {
-    automatizacion: 'Automatización e IA',
-    marketing: 'Marketing Performance',
-    embudos: 'Embudos y Conversión',
-    captacion: 'Sistema de Captación de Leads',
-    integral: 'Solución integral',
+    web: 'Sitio web',
+    marketing: 'Marketing digital',
+    automatizacion: 'Automatización de procesos',
+    agente: 'Agente IA',
     otro: 'No sé por dónde empezar'
   };
   var presupuestoMap = {
-    menos500: 'Menos de $500 USD',
-    '500-1500': '$500 – $1,500 USD',
-    '1500-3000': '$1,500 – $3,000 USD',
-    '3000-5000': '$3,000 – $5,000 USD',
-    mas5000: 'Más de $5,000 USD'
+    'menos500k': 'Menos de $500.000 CLP',
+    '500k-1m': '$500.000 – $1.000.000 CLP',
+    '1m-2m': '$1.000.000 – $2.000.000 CLP',
+    '2m-5m': '$2.000.000 – $5.000.000 CLP',
+    'mas5m': 'Más de $5.000.000 CLP'
   };
   var necesidad = necesidadMap[f.necesidad.value] || f.necesidad.value;
   var presupuesto = presupuestoMap[f.presupuesto.value] || 'No especificado';
@@ -643,7 +733,7 @@ function handleSubmit(e) {
     nombre: f.nombre.value,
     empresa: f.empresa.value,
     email: f.email.value,
-    whatsapp: f.whatsapp.value,
+    whatsapp: '+56' + f.whatsapp.value,
     necesidad: necesidad,
     presupuesto: presupuesto,
     mensaje: f.mensaje.value
@@ -684,6 +774,96 @@ var observer = new IntersectionObserver(function(entries) {
 }, { threshold: 0.1 });
 document.querySelectorAll('[data-aos]').forEach(function(el){ observer.observe(el); });
 
+/* ── CARRUSEL VITRINA ── */
+var showcaseTotal = 0;
+var showcaseCurrent = 0;
+var showcaseTrackPos = 0;
+var showcaseTimer = null;
+var showcaseSlides = [];
+
+function showcaseInit() {
+  var track = document.getElementById('showcaseTrack');
+  var dotsEl = document.getElementById('showcaseDots');
+  if (!track) return;
+  showcaseSlides = Array.prototype.slice.call(track.querySelectorAll('.showcase-slide'));
+  showcaseTotal = showcaseSlides.length;
+  /* clonar primer slide al final para loop suave */
+  var clone = showcaseSlides[0].cloneNode(true);
+  track.appendChild(clone);
+  /* crear puntos */
+  dotsEl.innerHTML = '';
+  for (var i = 0; i < showcaseTotal; i++) {
+    var d = document.createElement('button');
+    d.className = 'showcase-dot' + (i === 0 ? ' active' : '');
+    d.onclick = (function(idx){ return function(){
+      clearInterval(showcaseTimer);
+      showcaseJumpTo(idx);
+      showcaseAutoplay();
+    }; })(i);
+    dotsEl.appendChild(d);
+  }
+  if (showcaseTotal > 1) showcaseAutoplay();
+}
+
+function showcaseSetTrack(pos, animated) {
+  var track = document.getElementById('showcaseTrack');
+  track.style.transition = animated ? 'transform .6s cubic-bezier(.4,0,.2,1)' : 'none';
+  track.style.transform = 'translateX(-' + (pos * 100) + '%)';
+}
+
+function showcaseUpdateDots(idx) {
+  document.querySelectorAll('.showcase-dot').forEach(function(d, i){
+    d.className = 'showcase-dot' + (i === idx ? ' active' : '');
+  });
+}
+
+function showcaseNext() {
+  showcaseTrackPos++;
+  showcaseCurrent = showcaseTrackPos % showcaseTotal;
+  showcaseSetTrack(showcaseTrackPos, true);
+  showcaseUpdateDots(showcaseCurrent);
+  /* si llegamos al clon (posición = showcaseTotal), snap silencioso a 0 */
+  if (showcaseTrackPos === showcaseTotal) {
+    setTimeout(function(){
+      showcaseTrackPos = 0;
+      showcaseCurrent = 0;
+      showcaseSetTrack(0, false);
+      showcaseUpdateDots(0);
+    }, 650);
+  }
+}
+
+function showcaseJumpTo(idx) {
+  showcaseCurrent = idx;
+  showcaseTrackPos = idx;
+  showcaseSetTrack(idx, true);
+  showcaseUpdateDots(idx);
+}
+
+function showcaseAutoplay() {
+  clearInterval(showcaseTimer);
+  if (showcaseTotal < 2) return;
+  showcaseTimer = setInterval(function(){ showcaseNext(); }, 5000);
+}
+
+showcaseInit();
+
+/* Swipe táctil para móvil */
+(function(){
+  var el = document.getElementById('showcase');
+  if (!el) return;
+  var startX = 0;
+  el.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive:true});
+  el.addEventListener('touchend', function(e){
+    var diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      clearInterval(showcaseTimer);
+      if (diff > 0) { showcaseNext(); } else { showcaseJumpTo(Math.max(0, showcaseCurrent - 1)); }
+      showcaseAutoplay();
+    }
+  }, {passive:true});
+})();
+
 /* Smooth scroll */
 document.querySelectorAll('a[href^="#"]').forEach(function(a) {
   a.addEventListener('click', function(e) {
@@ -701,6 +881,160 @@ if (formEl && stickyEl) {
     stickyEl.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
   }, { threshold: 0.2 });
   formObserver.observe(formEl);
+}
+
+/* ── AI CHAT WIDGET ── */
+var AGENT_URL  = '/webhook/agent-chat';
+var LEAD_URL   = 'https://leccion-la-tribu-n8n.xyywd9.easypanel.host/webhook/lead-landing';
+var TTS_URL    = 'https://leccion-la-tribu-n8n.xyywd9.easypanel.host/webhook/agent-tts';
+var chatOpen   = false;
+var chatInited = false;
+var chatHistory = [];
+var ttsEnabled = false;
+var isRecording = false;
+var recognition = null;
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  var panel = document.getElementById('chat-panel');
+  panel.style.display = chatOpen ? 'flex' : 'none';
+  if (chatOpen && !chatInited) { chatInited = true; initChat(); }
+  if (chatOpen) document.getElementById('chat-input').focus();
+}
+
+function initChat() {
+  var greeting = '¡Hola! Soy el asistente de Agencia Directa 👋 Cuéntame, ¿en qué puedo ayudarte hoy?';
+  addBotMsg(greeting);
+  chatHistory.push({role: 'assistant', content: greeting});
+}
+
+function addBotMsg(text) {
+  var el = document.createElement('div');
+  el.className = 'msg msg-bot';
+  el.textContent = text;
+  appendMsg(el);
+  if (ttsEnabled) speakText(text);
+}
+
+function addUserMsg(text) {
+  var el = document.createElement('div');
+  el.className = 'msg msg-user';
+  el.textContent = text;
+  appendMsg(el);
+}
+
+function appendMsg(el) {
+  var box = document.getElementById('chat-messages');
+  box.appendChild(el);
+  box.scrollTop = box.scrollHeight;
+}
+
+function showTyping() {
+  var el = document.createElement('div');
+  el.className = 'msg msg-typing';
+  el.id = 'typing-indicator';
+  el.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
+  appendMsg(el);
+}
+
+function hideTyping() {
+  var t = document.getElementById('typing-indicator');
+  if (t) t.remove();
+}
+
+async function sendChatMsg(text) {
+  var input = document.getElementById('chat-input');
+  var msg = text || input.value.trim();
+  if (!msg) return;
+  input.value = '';
+  addUserMsg(msg);
+  chatHistory.push({role: 'user', content: msg});
+  showTyping();
+  try {
+    var res = await fetch(AGENT_URL, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({message: msg, history: chatHistory.slice(-8)})
+    });
+    var data = await res.json();
+    hideTyping();
+    addBotMsg(data.reply);
+    chatHistory.push({role: 'assistant', content: data.reply});
+    if (data.lead_data) {
+      var ld = data.lead_data;
+      fetch(LEAD_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: new URLSearchParams({
+          nombre: ld.nombre || '', empresa: ld.empresa || '',
+          email: ld.email || '', whatsapp: '', necesidad: ld.necesidad || '',
+          presupuesto: ld.presupuesto || '', mensaje: 'Lead captado via chat IA'
+        }).toString()
+      }).catch(function(){});
+    }
+  } catch(e) {
+    hideTyping();
+    addBotMsg('Disculpa, tuve un problema. Por favor intenta de nuevo.');
+  }
+}
+
+function toggleMic() {
+  var SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SpeechRec) { alert('Tu navegador no soporta voz. Usa Chrome.'); return; }
+  var btn = document.getElementById('mic-btn');
+  if (!isRecording) {
+    recognition = new SpeechRec();
+    recognition.lang = 'es-CL';
+    recognition.interimResults = false;
+    recognition.onresult = function(e) {
+      var transcript = e.results[0][0].transcript;
+      document.getElementById('chat-input').value = transcript;
+      sendChatMsg(transcript);
+    };
+    recognition.onerror = function() { isRecording = false; btn.classList.remove('active'); };
+    recognition.onend = function() { isRecording = false; btn.classList.remove('active'); };
+    recognition.start();
+    isRecording = true;
+    btn.classList.add('active');
+    btn.textContent = '🔴';
+  } else {
+    recognition.stop();
+    isRecording = false;
+    btn.classList.remove('active');
+    btn.textContent = '🎤';
+  }
+}
+
+function toggleTts() {
+  ttsEnabled = !ttsEnabled;
+  var btn = document.getElementById('tts-btn');
+  btn.textContent = ttsEnabled ? 'ON' : 'OFF';
+  btn.className = 'tts-toggle' + (ttsEnabled ? ' on' : '');
+}
+
+function speakText(text) {
+  if (!ttsEnabled) return;
+  fetch(TTS_URL, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({text: text})
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    if (data && data.audio_base64) {
+      var audio = new Audio('data:audio/mp3;base64,' + data.audio_base64);
+      audio.play();
+    }
+  })
+  .catch(function(){
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'es-CL';
+    u.rate = 1.0;
+    window.speechSynthesis.speak(u);
+  });
 }
 </script>
 </body>
