@@ -544,21 +544,29 @@ body.ad-open > footer{
 .nav-hamburger.open span:nth-child(2){opacity:0}
 .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
+/* Mobile nav overlay — fuera del nav para evitar el bug de backdrop-filter */
+#mobileNavOverlay{
+  display:none;position:fixed;top:94px;left:0;right:0;
+  background:rgba(2,5,12,.98);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  z-index:500;padding:12px 0 20px;
+}
+#mobileNavOverlay ul{list-style:none;display:flex;flex-direction:column;gap:0}
+#mobileNavOverlay li{text-align:center}
+#mobileNavOverlay a{
+  display:block;padding:14px 24px;font-size:17px;font-weight:500;
+  color:rgba(255,255,255,.8);text-decoration:none;font-family:'Outfit',sans-serif;
+  transition:color .2s;
+}
+#mobileNavOverlay a:hover{color:#fff}
+#mobileNavOverlay.open{display:block}
+
 /* ── Tablet 900px ── */
 @media(max-width:900px){
   /* Nav */
   .nav{padding:16px 24px}
   .nav-hamburger{display:flex}
-  .nav-links{
-    display:none;position:fixed;top:90px;left:0;right:0;
-    background:rgba(2,5,12,.97);backdrop-filter:blur(16px);
-    flex-direction:column;align-items:center;gap:0;
-    padding:16px 0 24px;border-bottom:1px solid rgba(255,255,255,.08);
-    z-index:150;
-  }
-  .nav-links.mobile-open{display:flex}
-  .nav-links li{width:100%;text-align:center}
-  .nav-links a{display:block;padding:14px 24px;font-size:16px}
+  .nav-links{display:none!important}
 
   /* Sections */
   .section{padding:80px 24px}
@@ -591,8 +599,16 @@ body.ad-open > footer{
   .footer-bottom{flex-direction:column;text-align:center}
 
   /* Overlay pages */
-  .ad-page{top:90px}
+  .ad-page{top:94px}
   .ad-page-topbar{padding:14px 20px}
+
+  /* Títulos con nowrap → permitir wrap en móvil */
+  [style*="white-space:nowrap"]{white-space:normal!important}
+
+  /* vbanner: reducir tamaño texto */
+  .vbanner{max-width:100%!important;padding:24px!important}
+  .vbanner-quote{font-size:18px!important;line-height:1.5!important}
+  .vbanner-logo img{height:36px!important}
 
   /* Servicios network → lista simple */
   #svcNetwork{display:none}
@@ -684,6 +700,16 @@ body.ad-open > footer{
     </a>
   </div>
 </nav>
+
+<!-- Mobile nav overlay (fuera del nav para evitar bug backdrop-filter) -->
+<div id="mobileNavOverlay">
+  <ul>
+    <li><a href="#inicio" onclick="closeMobileNav();closeAdPage();window.scrollTo(0,0)">Inicio</a></li>
+    <li><a href="#" onclick="closeMobileNav();openAdPage('page-servicios');return false">Servicios</a></li>
+    <li><a href="#" onclick="closeMobileNav();openAdPage('page-nosotros');return false">Nosotros</a></li>
+    <li><a href="#" onclick="closeMobileNav();closeAdPage();setTimeout(function(){document.getElementById('footer').scrollIntoView({behavior:'smooth'})},80);return false">Contacto</a></li>
+  </ul>
+</div>
 
 <!-- ────────────────────────────
   HERO
@@ -1575,18 +1601,15 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
 
 <script>
 function toggleMobileNav(){
-  var links = document.querySelector('.nav-links');
+  var overlay = document.getElementById('mobileNavOverlay');
   var btn = document.getElementById('navHamburger');
-  links.classList.toggle('mobile-open');
+  overlay.classList.toggle('open');
   btn.classList.toggle('open');
 }
-// Cerrar menú al hacer click en un enlace
-document.querySelectorAll('.nav-links a').forEach(function(a){
-  a.addEventListener('click', function(){
-    document.querySelector('.nav-links').classList.remove('mobile-open');
-    document.getElementById('navHamburger').classList.remove('open');
-  });
-});
+function closeMobileNav(){
+  document.getElementById('mobileNavOverlay').classList.remove('open');
+  document.getElementById('navHamburger').classList.remove('open');
+}
 
 function openAdPage(id){
   document.querySelectorAll('.ad-page').forEach(function(p){p.classList.remove('open');});
