@@ -529,19 +529,102 @@ body.ad-open > footer{
 /* ────────────────────────────
    RESPONSIVE
 ──────────────────────────── */
+
+/* Hamburger button */
+.nav-hamburger{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  background:none;border:none;cursor:pointer;padding:4px;
+}
+.nav-hamburger span{
+  display:block;width:24px;height:2px;
+  background:rgba(255,255,255,.8);border-radius:2px;
+  transition:all .25s;
+}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ── Tablet 900px ── */
 @media(max-width:900px){
-  .nav-links{display:none}
+  /* Nav */
   .nav{padding:16px 24px}
-  .section{padding:80px 28px}
+  .nav-hamburger{display:flex}
+  .nav-links{
+    display:none;position:fixed;top:90px;left:0;right:0;
+    background:rgba(2,5,12,.97);backdrop-filter:blur(16px);
+    flex-direction:column;align-items:center;gap:0;
+    padding:16px 0 24px;border-bottom:1px solid rgba(255,255,255,.08);
+    z-index:150;
+  }
+  .nav-links.mobile-open{display:flex}
+  .nav-links li{width:100%;text-align:center}
+  .nav-links a{display:block;padding:14px 24px;font-size:16px}
+
+  /* Sections */
+  .section{padding:80px 24px}
+  .s-crecer{padding:100px 24px}
+
+  /* Grids → 1 col */
   .card-grid--3,.card-grid--2{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
   .metric-grid{grid-template-columns:1fr}
-  .split,.form-split{grid-template-columns:1fr;gap:40px}
   .form-row{grid-template-columns:1fr}
+
+  /* El Resultado / Sin Compromiso split */
+  .split,[style*="grid-template-columns:1fr 1px 1fr"]{
+    grid-template-columns:1fr!important;
+  }
+
+  /* Ocultar divisor vertical */
+  [style*="background:rgba(255,255,255,.08)"][style*="align-self:stretch"]{display:none!important}
+
+  /* Form split */
+  .form-split{grid-template-columns:1fr;gap:40px}
+
+  /* Hero CTA buttons */
+  .cta-row{flex-direction:column;align-items:stretch;gap:12px}
+  .cta-row a{text-align:center;justify-content:center}
+
+  /* Footer */
   .footer-grid{grid-template-columns:1fr;gap:36px}
-  .footer{padding:48px 28px 32px}
-  .s-crecer{padding:100px 28px}
+  .footer{padding:48px 24px 32px}
   .footer-bottom{flex-direction:column;text-align:center}
+
+  /* Overlay pages */
+  .ad-page{top:90px}
+  .ad-page-topbar{padding:14px 20px}
+
+  /* Servicios network → lista simple */
+  #svcNetwork{display:none}
+  #svcFallback{display:grid!important}
+
+  /* Nosotros fotos → 1 columna */
+  [style*="max-width:75%"][style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr!important;
+    max-width:100%!important;
+  }
+
+  /* vbanner */
+  .vbanner{max-width:100%!important}
+}
+
+/* ── Móvil 540px ── */
+@media(max-width:540px){
+  .section{padding:60px 18px}
+  .s-title{font-size:clamp(22px,6vw,36px)!important}
+  .hero-title{font-size:clamp(28px,8vw,44px)}
+  .btn-primary,.btn-wa{width:100%;justify-content:center}
+  .form-card{padding:24px 18px}
+  .metric-card{padding:20px}
+  .promo-card{padding:20px}
+  .nav-logo img{height:48px}
+  .faq-item summary{font-size:14px;padding:16px 18px}
+}
+
+/* ── Móvil pequeño 380px ── */
+@media(max-width:380px){
+  .section{padding:48px 14px}
+  .nav{padding:14px 16px}
 }
 
 /* ── SERVICIOS NETWORK ── */
@@ -577,6 +660,9 @@ body.ad-open > footer{
     <li><a href="#" onclick="openAdPage('page-nosotros');return false">Nosotros</a></li>
     <li><a href="#" onclick="closeAdPage();setTimeout(function(){document.getElementById('footer').scrollIntoView({behavior:'smooth'})},80);return false">Contacto</a></li>
   </ul>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menú" onclick="toggleMobileNav()">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-social">
     <a href="https://mail.google.com/mail/?view=cm&to=agenciadirecta.ia@gmail.com" target="_blank" title="Email">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -1337,6 +1423,17 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
       <span class="s-label">Lo que hacemos</span>
       <h2 class="s-title" style="font-weight:500;white-space:nowrap">Todo lo que necesitas para escalar tu negocio</h2>
       <p class="s-sub" style="white-space:nowrap">Combinamos estrategia, tecnología e inteligencia artificial para construir sistemas que trabajan para ti.</p>
+      <!-- FALLBACK MÓVIL: lista de servicios -->
+      <div id="svcFallback" style="display:none;grid-template-columns:1fr;gap:16px;margin:32px 0 48px">
+        <div class="card"><p class="card-title" style="font-size:16px;margin-bottom:6px">Estrategia Digital</p><p style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.6">Diseñamos la hoja de ruta para que tu negocio crezca de forma ordenada, sostenida y medible.</p></div>
+        <div class="card"><p class="card-title" style="font-size:16px;margin-bottom:6px">Automatización e IA</p><p style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.6">Sistemas inteligentes que automatizan tareas, seguimiento comercial y atención al cliente 24/7.</p></div>
+        <div class="card"><p class="card-title" style="font-size:16px;margin-bottom:6px">Publicidad Digital</p><p style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.6">Campañas en Meta, Google y TikTok optimizadas para atraer oportunidades reales de negocio.</p></div>
+        <div class="card"><p class="card-title" style="font-size:16px;margin-bottom:6px">Conversión Web</p><p style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.6">Páginas y procesos diseñados para convertir más visitas en clientes reales.</p></div>
+        <div class="card"><p class="card-title" style="font-size:16px;margin-bottom:6px">Captación Continua</p><p style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.6">Un sistema que atrae nuevos clientes de forma predecible, sin depender del esfuerzo manual.</p></div>
+        <div class="card"><p class="card-title" style="font-size:16px;margin-bottom:6px">Gestión de Redes</p><p style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.6">Contenido estratégico y gestión de comunidades para posicionar tu marca en redes sociales.</p></div>
+        <div class="card"><p class="card-title" style="font-size:16px;margin-bottom:6px">Email Marketing</p><p style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.6">Secuencias automatizadas que nutren tus contactos y los convierten en clientes.</p></div>
+      </div>
+
       <!-- NETWORK VISUAL -->
       <div id="svcNetwork" style="position:relative;width:100%;height:600px;margin:40px 0 60px">
         <canvas id="svcCanvas" style="position:absolute;inset:0;pointer-events:none"></canvas>
@@ -1477,6 +1574,20 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
 </div>
 
 <script>
+function toggleMobileNav(){
+  var links = document.querySelector('.nav-links');
+  var btn = document.getElementById('navHamburger');
+  links.classList.toggle('mobile-open');
+  btn.classList.toggle('open');
+}
+// Cerrar menú al hacer click en un enlace
+document.querySelectorAll('.nav-links a').forEach(function(a){
+  a.addEventListener('click', function(){
+    document.querySelector('.nav-links').classList.remove('mobile-open');
+    document.getElementById('navHamburger').classList.remove('open');
+  });
+});
+
 function openAdPage(id){
   document.querySelectorAll('.ad-page').forEach(function(p){p.classList.remove('open');});
   var page = document.getElementById(id);
