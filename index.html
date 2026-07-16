@@ -577,9 +577,10 @@ body.ad-open > footer{
   .s-crecer{padding:100px 24px}
 
   /* Grids → 1 col */
-  .card-grid--3,.card-grid--2{grid-template-columns:1fr}
+  .card-grid--3{grid-template-columns:1fr}
+  .card-grid--2{grid-template-columns:repeat(2,1fr)}
   .steps{grid-template-columns:1fr}
-  .metric-grid{grid-template-columns:1fr}
+  .metric-grid{grid-template-columns:repeat(3,1fr)!important;gap:10px!important}
   .form-row{grid-template-columns:1fr}
 
   /* El Resultado / Sin Compromiso split */
@@ -652,7 +653,10 @@ body.ad-open > footer{
   }
   .btn-primary svg,.btn-wa svg{width:14px!important;height:14px!important}
   .cta-row{align-items:center}
-  .metric-card{padding:20px}
+  .metric-card{padding:12px 8px}
+  .metric-num{font-size:22px!important}
+  .metric-label{font-size:11px!important}
+  .metric-quote{display:none}
   .promo-card{padding:20px}
   .nav-logo img{height:48px}
   .faq-item summary{font-size:14px;padding:16px 18px}
@@ -1000,7 +1004,10 @@ body.ad-open > footer{
         <div class="promo-card" style="margin-top:32px">
           <span class="promo-tag">Totalmente gratuito</span>
           <h3 class="promo-title">Primera consulta sin costo</h3>
-          <a class="btn-cta-full" href="#contacto">Solicitar Auditoría Gratis</a>
+          <a class="btn-primary" href="#contacto" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'});return false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+            Solicitar Auditoría Gratis
+          </a>
           <p class="promo-note">Respondemos en menos de 24 hrs.</p>
         </div>
       </div>
@@ -1481,6 +1488,19 @@ body.ad-open > footer{
 
   /* start first video */
   slides[0].play();
+
+  /* touch swipe */
+  var banner = document.getElementById('vbanner');
+  var txStart = 0;
+  banner.addEventListener('touchstart', function(e){
+    txStart = e.changedTouches[0].clientX;
+  }, {passive:true});
+  banner.addEventListener('touchend', function(e){
+    var diff = txStart - e.changedTouches[0].clientX;
+    if(Math.abs(diff) > 40){
+      goTo(diff > 0 ? (current+1)%slides.length : (current-1+slides.length)%slides.length);
+    }
+  }, {passive:true});
 })();
 </script>
 
