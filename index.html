@@ -580,7 +580,7 @@ body.ad-open > footer{
   /* Centrado global móvil */
   .s-label{display:block;text-align:center}
   .s-title{text-align:center;max-width:100%;margin-left:auto;margin-right:auto}
-  .s-sub{text-align:center;max-width:100%;margin-left:auto;margin-right:auto}
+  .s-sub{text-align:center;max-width:100%;margin-left:auto;margin-right:auto;overflow-wrap:break-word;word-break:break-word}
 
   /* Eliminar paddings laterales de columnas apiladas */
   [style*="padding-right:52px"]{padding-right:0!important}
@@ -619,8 +619,10 @@ body.ad-open > footer{
   /* Form split */
   .form-split{grid-template-columns:1fr;gap:40px}
 
-  /* Hero CTA buttons */
-  .cta-row{flex-direction:column;align-items:stretch;gap:12px}
+  /* Hero */
+  .hero-content{padding:20px 24px 80px;text-align:center;align-items:center}
+  .hero-title{text-align:center}
+  .cta-row{flex-direction:column;align-items:center;gap:12px}
   .cta-row a{text-align:center;justify-content:center}
 
   /* Footer */
