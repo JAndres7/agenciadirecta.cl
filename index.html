@@ -142,10 +142,11 @@ body.ad-open > footer{
   text-align:center;padding:40px 48px 100px;
 }
 .hero-title{
-  font-size:clamp(34px,4vw,60px);font-weight:400;
+  font-size:clamp(39px,4.6vw,69px);font-weight:400;
   line-height:1.1;color:#fff;max-width:1200px;margin-bottom:56px;
 }
 .hero-line1{display:block;margin-bottom:.1em;color:rgba(255,255,255,.8);font-size:1.12em}
+br.br-mobile{display:none}
 .morph-wrap{
   display:flex;justify-content:center;position:relative;
   filter:contrast(18) blur(.4px) drop-shadow(0 0 10px rgba(180,220,255,.85)) drop-shadow(0 0 22px rgba(140,200,255,.5));
@@ -628,6 +629,8 @@ body.ad-open > footer{
   .section--hero{min-height:auto}
   .hero-content{padding:20px 24px 32px;text-align:center;align-items:center;justify-content:flex-start}
   .hero-title{text-align:center}
+  .hero-line1{font-size:0.92em}
+  br.br-mobile{display:block}
   .cta-row{flex-direction:column;align-items:center;gap:12px}
   .cta-row a{text-align:center;justify-content:center}
   .btn-primary,.btn-wa,.btn-cta-full{padding:14px 30px;font-size:13px;width:100%;justify-content:center}
@@ -812,7 +815,7 @@ body.ad-open > footer{
   <div class="hero-nav-spacer"></div>
   <div class="hero-content">
     <h1 class="hero-title">
-      <span class="hero-line1">Escalamos tu negocio<br>con sistemas de</span>
+      <span class="hero-line1">Escalamos tu negocio<br class="br-mobile">con sistemas de</span>
       <span class="morph-wrap" id="morphWrap">
         <span class="morph-text" id="morphA">Inteligencia artificial</span>
         <span class="morph-text" id="morphB">Automatización digital</span>
