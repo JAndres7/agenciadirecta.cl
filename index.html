@@ -595,12 +595,13 @@ body.ad-open > footer{
     scroll-snap-type:x mandatory;
     -webkit-overflow-scrolling:touch;
     scrollbar-width:none;
-    gap:0!important;
+    gap:14px!important;
+    padding:4px 15% 12px;
   }
   .metric-grid::-webkit-scrollbar{display:none}
   .metric-card{
-    flex:0 0 100%!important;
-    scroll-snap-align:start;
+    flex:0 0 70%!important;
+    scroll-snap-align:center;
     text-align:center;
   }
   .form-row{grid-template-columns:1fr}
@@ -608,6 +609,9 @@ body.ad-open > footer{
   /* Colapsar grids de 2 columnas */
   .col2-split{grid-template-columns:1fr!important}
   .col2-split > div[style*="align-self:stretch"]{display:none!important}
+
+  /* Contener overflow horizontal */
+  .section,.inner{max-width:100%;overflow-x:hidden}
 
   /* Form split */
   .form-split{grid-template-columns:1fr;gap:40px}
@@ -663,7 +667,8 @@ body.ad-open > footer{
 @media(max-width:540px){
   .section{padding:60px 18px}
   .s-title{font-size:clamp(22px,6vw,36px)!important}
-  .hero-title{font-size:clamp(36px,10vw,52px)}
+  .hero-title{font-size:clamp(28px,7.5vw,42px)}
+  .morph-wrap{overflow:hidden;width:100%}
   .btn-primary,.btn-wa{
     padding:14px 30px;
     font-size:13px;
