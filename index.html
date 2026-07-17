@@ -608,7 +608,7 @@ body.ad-open > footer{
   .form-row{grid-template-columns:1fr}
 
   /* Colapsar grids de 2 columnas */
-  .col2-split{grid-template-columns:1fr!important}
+  .col2-split{--split-cols:1fr;--col-pad:0px;grid-template-columns:1fr!important}
   .col2-split > div[style*="align-self:stretch"]{display:none!important}
 
   /* Contener overflow horizontal */
@@ -868,10 +868,10 @@ body.ad-open > footer{
 <section id="problema" class="section">
   <div class="inner">
 
-    <div class="col2-split" style="display:grid;grid-template-columns:1fr 1px 1fr;gap:0;align-items:start">
+    <div class="col2-split" style="display:grid;grid-template-columns:var(--split-cols,1fr 1px 1fr);gap:0;align-items:start">
 
       <!-- El Problema -->
-      <div style="padding-right:52px">
+      <div style="padding-right:var(--col-pad,52px);min-width:0">
         <span class="s-label">El Problema</span>
         <h2 class="s-title">Si algo no está funcionando, probablemente es uno de estos puntos.</h2>
         <div class="card-grid card-grid--2">
@@ -912,7 +912,7 @@ body.ad-open > footer{
       <div style="background:rgba(255,255,255,.08);align-self:stretch"></div>
 
       <!-- La Solución -->
-      <div style="padding-left:52px" id="servicios">
+      <div style="padding-left:var(--col-pad,52px);min-width:0" id="servicios">
         <span class="s-label">La Solución</span>
         <h2 class="s-title">Sistemas que trabajan para tu negocio,<br>incluso cuando tú no estás.</h2>
         <div class="card-grid card-grid--2" style="margin-bottom:40px">
@@ -994,10 +994,10 @@ body.ad-open > footer{
 ──────────────────────────── -->
 <section id="resultado" class="section section--alt">
   <div class="inner">
-    <div class="col2-split" style="display:grid;grid-template-columns:1fr 1px 1fr;gap:0;align-items:start">
+    <div class="col2-split" style="display:grid;grid-template-columns:var(--split-cols,1fr 1px 1fr);gap:0;align-items:start">
 
       <!-- El Resultado -->
-      <div style="padding-right:52px">
+      <div style="padding-right:var(--col-pad,52px);min-width:0">
         <span class="s-label">El Resultado</span>
         <h2 class="s-title">Ganas tiempo, ganas dinero y ganas clientes.</h2>
         <div class="metric-grid" style="margin-top:20px;grid-template-columns:1fr;gap:16px">
@@ -1023,7 +1023,7 @@ body.ad-open > footer{
       <div style="background:rgba(255,255,255,.08);align-self:stretch"></div>
 
       <!-- Sin Compromiso -->
-      <div style="padding-left:52px" id="auditoria">
+      <div style="padding-left:var(--col-pad,52px);min-width:0" id="auditoria">
         <span class="s-label">Sin Compromiso</span>
         <h2 class="s-title">Solicita una auditoría gratis y personalizada para tu negocio</h2>
         <p class="s-sub" style="margin-bottom:32px">Analizamos tu negocio y te entregamos una propuesta de crecimiento concreta, incluida su estrategia de implementación.</p>
