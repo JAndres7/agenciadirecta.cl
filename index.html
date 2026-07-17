@@ -757,7 +757,7 @@ br.br-mobile{display:none}
 .svc-tooltip{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);width:188px;background:rgba(4,10,28,.97);border:1px solid rgba(91,192,255,.28);border-radius:10px;padding:12px 14px;font-family:'Outfit',sans-serif;font-size:13px;color:rgba(255,255,255,.72);line-height:1.5;text-align:center;opacity:0;pointer-events:none;transition:opacity .18s;box-shadow:0 4px 20px rgba(0,0,0,.7),0 0 14px rgba(91,192,255,.1);z-index:20;white-space:normal}
 .svc-node:hover .svc-tooltip{opacity:1}
 /* Mini network móvil */
-.svc-mn{position:absolute;transform:translate(-50%,-50%);cursor:pointer;z-index:2;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+.svc-mn{position:absolute;transform:translate(-50%,-50%);cursor:pointer;touch-action:manipulation;z-index:2;transition:transform .25s cubic-bezier(.4,0,.2,1)}
 .svc-mc{width:50px;height:50px;border-radius:50%;background:rgba(2,5,18,.92);border:1.5px solid rgba(91,192,255,.4);box-shadow:0 0 0 1px rgba(91,192,255,.12),0 0 18px rgba(91,192,255,.18);display:flex;align-items:center;justify-content:center;transition:border-color .25s,box-shadow .25s}
 .svc-mc svg{width:21px;height:21px;stroke:#fff;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 4px rgba(255,255,255,.55))}
 .svc-mc.svc-hub{width:68px;height:68px;border-color:rgba(91,192,255,.72);box-shadow:0 0 0 1.5px rgba(91,192,255,.35),0 0 28px rgba(91,192,255,.55),0 0 64px rgba(91,192,255,.22);animation:svcHubPulse 3s ease-in-out infinite}
@@ -1607,10 +1607,19 @@ function svcMiniDraw(){
   }
 }
 var svcMiniActive=-1;
-document.querySelectorAll('.svc-mn').forEach(function(node){
-  node.addEventListener('click',function(e){
+(function(){
+  var wrap=document.getElementById('svcMiniWrap');
+  if(!wrap)return;
+  wrap.addEventListener('click',function(e){
+    var node=e.target.closest('.svc-mn');
+    if(!node){
+      document.getElementById('svcMiniTip').classList.remove('tip-open');
+      document.querySelectorAll('.svc-mn').forEach(function(n){n.classList.remove('mn-active');});
+      svcMiniActive=-1;
+      return;
+    }
     e.stopPropagation();
-    var idx=parseInt(this.dataset.i);
+    var idx=parseInt(node.dataset.i);
     var tip=document.getElementById('svcMiniTip');
     var wasActive=svcMiniActive===idx;
     document.querySelectorAll('.svc-mn').forEach(function(n){n.classList.remove('mn-active');});
@@ -1618,20 +1627,14 @@ document.querySelectorAll('.svc-mn').forEach(function(node){
       tip.classList.remove('tip-open');
       svcMiniActive=-1;
     } else {
-      this.classList.add('mn-active');
+      node.classList.add('mn-active');
       document.getElementById('svcMiniTipTitle').textContent=svcMiniData[idx].label;
       document.getElementById('svcMiniTipDesc').textContent=svcMiniData[idx].desc;
       tip.classList.add('tip-open');
       svcMiniActive=idx;
     }
   });
-});
-document.addEventListener('click',function(){
-  var tip=document.getElementById('svcMiniTip');
-  if(tip)tip.classList.remove('tip-open');
-  document.querySelectorAll('.svc-mn').forEach(function(n){n.classList.remove('mn-active');});
-  svcMiniActive=-1;
-});
+})();
 window.addEventListener('resize',svcMiniDraw);
 </script>
 <!-- CARD TOGGLE -->
@@ -1673,10 +1676,9 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
     <div class="inner">
       <span class="s-label">Lo que hacemos</span>
       <h2 class="s-title" style="font-weight:500;white-space:nowrap">Todo lo que necesitas para escalar tu negocio</h2>
-      <p class="s-sub" style="white-space:nowrap">Combinamos estrategia, tecnología e inteligencia artificial para construir sistemas que trabajan para ti.</p>
       <!-- MINI NETWORK MÓVIL -->
       <div id="svcMiniWrap" style="display:none;margin:32px 0 48px">
-        <div id="svcMini" style="position:relative;width:min(84vw,300px);height:min(84vw,300px);margin:0 auto">
+        <div id="svcMini" style="position:relative;width:min(92vw,345px);height:min(92vw,345px);margin:0 auto">
           <canvas id="svcMiniCanvas" style="position:absolute;inset:0;pointer-events:none"></canvas>
           <!-- 0: hub centro -->
           <div class="svc-mn" data-i="0" style="left:50%;top:50%"><div class="svc-mc svc-hub"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div></div>
