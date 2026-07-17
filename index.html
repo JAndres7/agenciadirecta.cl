@@ -756,6 +756,11 @@ br.br-mobile{display:none}
 .svc-label{font-family:'Outfit',sans-serif;font-size:12px;font-weight:500;color:rgba(255,255,255,.78);text-align:center;max-width:100px;line-height:1.35}
 .svc-tooltip{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);width:188px;background:rgba(4,10,28,.97);border:1px solid rgba(91,192,255,.28);border-radius:10px;padding:12px 14px;font-family:'Outfit',sans-serif;font-size:13px;color:rgba(255,255,255,.72);line-height:1.5;text-align:center;opacity:0;pointer-events:none;transition:opacity .18s;box-shadow:0 4px 20px rgba(0,0,0,.7),0 0 14px rgba(91,192,255,.1);z-index:20;white-space:normal}
 .svc-node:hover .svc-tooltip{opacity:1}
+#svcFallback > div > p{max-height:0;overflow:hidden;opacity:0;margin-top:0;transition:max-height .3s ease,opacity .25s ease,margin-top .25s ease}
+#svcFallback > div.svc-open > p{max-height:120px;opacity:1;margin-top:4px}
+#svcFallback > div{cursor:pointer}
+#svcFallback > div .svc-circle{transition:border-color .25s,box-shadow .25s}
+#svcFallback > div.svc-open .svc-circle{border-color:rgba(91,192,255,.85);box-shadow:0 0 0 1px rgba(91,192,255,.4),0 0 28px rgba(91,192,255,.5),0 0 60px rgba(91,192,255,.2)}
 </style>
 </head>
 <body>
@@ -1566,6 +1571,16 @@ br.br-mobile{display:none}
 })();
 </script>
 
+<!-- SVC FALLBACK TOGGLE -->
+<script>
+document.querySelectorAll('#svcFallback > div').forEach(function(node){
+  node.addEventListener('click',function(){
+    var isOpen=this.classList.contains('svc-open');
+    document.querySelectorAll('#svcFallback > div').forEach(function(n){n.classList.remove('svc-open');});
+    if(!isOpen)this.classList.add('svc-open');
+  });
+});
+</script>
 <!-- CARD TOGGLE -->
 <script>
 document.querySelectorAll('.card').forEach(function(card){
