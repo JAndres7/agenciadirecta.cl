@@ -595,14 +595,12 @@ body.ad-open > footer{
     scroll-snap-type:x mandatory;
     -webkit-overflow-scrolling:touch;
     scrollbar-width:none;
-    gap:16px!important;
-    padding:4px 40px 12px;
-    justify-content:flex-start;
+    gap:0!important;
   }
   .metric-grid::-webkit-scrollbar{display:none}
   .metric-card{
-    flex:0 0 260px!important;
-    scroll-snap-align:center;
+    flex:0 0 100%!important;
+    scroll-snap-align:start;
     text-align:center;
   }
   .form-row{grid-template-columns:1fr}
