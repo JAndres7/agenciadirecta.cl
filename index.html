@@ -397,14 +397,16 @@ body.ad-open > footer{
 .promo-desc{font-size:15px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:32px}
 .promo-note{font-size:13px;color:rgba(255,255,255,.4);margin-top:14px}
 .btn-cta-full{
-  display:block;width:100%;padding:18px;border-radius:100px;
-  background:linear-gradient(135deg,#1155CC,#2D9CDB);color:#fff;
-  font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;
-  text-decoration:none;border:none;cursor:pointer;
-  box-shadow:0 4px 32px rgba(17,85,204,.4);
-  transition:transform .2s,box-shadow .2s;
+  display:flex;align-items:center;justify-content:center;width:100%;padding:17px;border-radius:90px;
+  background:linear-gradient(135deg,rgba(17,85,204,.7),rgba(45,156,219,.7));color:#fff;
+  font-family:'Outfit',sans-serif;font-size:17px;font-weight:700;
+  text-decoration:none;cursor:pointer;
+  box-shadow:0 4px 32px rgba(17,85,204,.5),inset 0 1px 0 rgba(255,255,255,.15);
+  border:1px solid rgba(80,160,255,.35);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  transition:transform .2s,box-shadow .2s,background .2s;
 }
-.btn-cta-full:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(17,85,204,.6)}
+.btn-cta-full:hover{transform:translateY(-3px);background:linear-gradient(135deg,rgba(17,85,204,.9),rgba(45,156,219,.9));box-shadow:0 8px 40px rgba(17,85,204,.65),inset 0 1px 0 rgba(255,255,255,.2)}
 
 /* ────────────────────────────
    EMPECEMOS — form
@@ -697,21 +699,26 @@ body.ad-open > footer{
   /* Formulario flotante en móvil */
   #contacto{padding:60px 18px}
   .form-card{
-    max-width:76%;
+    max-width:84%;
     margin:0 auto;
-    padding:24px 17px;
-    border-radius:17px;
+    padding:26px 19px;
+    border-radius:18px;
+    overflow:hidden;
     border:1.5px solid rgba(91,192,255,.65)!important;
     box-shadow:0 0 0 1px rgba(91,192,255,.25),0 0 24px rgba(91,192,255,.25),0 8px 32px rgba(0,0,0,.5)!important;
   }
+  .form-group{margin-bottom:10px;gap:5px}
   .form-group input,
   .form-group select,
   .form-group textarea{
     padding:9px 12px;
     font-size:13px;
+    width:100%;
+    min-width:0;
   }
+  .phone-row{min-width:0;overflow:hidden}
   .form-group label{font-size:12px}
-  .form-badge{font-size:11px;margin-bottom:20px}
+  .form-badge{font-size:11px;margin-bottom:16px}
 }
 
 /* ── Móvil pequeño 380px ── */
