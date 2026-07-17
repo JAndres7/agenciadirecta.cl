@@ -1591,6 +1591,11 @@ var svcMiniData=[
   {label:'Email Marketing',desc:'Secuencias automatizadas que nutren tus contactos y los convierten en clientes.'},
 ];
 var svcMiniActive=-1;
+var _smC,_smX,_smW,_smH,_smRaf;
+var _smPts=[[.5,.5],[.5,.11],[.81,.27],[.81,.73],[.5,.89],[.19,.73],[.19,.27]];
+var _smEdges=[[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[1,2],[2,3],[3,4],[4,5],[5,6],[6,1],[1,4],[2,5]];
+var _smPulses=_smEdges.map(function(e,i){return{e:e,t:i/_smEdges.length,s:.0018+Math.random()*.001};});
+
 function svcMiniClick(idx){
   var tip=document.getElementById('svcMiniTip');
   var wasActive=svcMiniActive===idx;
@@ -1606,22 +1611,39 @@ function svcMiniClick(idx){
     svcMiniActive=idx;
   }
 }
+
 function svcMiniDraw(){
-  var canvas=document.getElementById('svcMiniCanvas');
-  if(!canvas)return;
-  var W=canvas.offsetWidth,H=canvas.offsetHeight;
-  if(!W||!H)return;
-  canvas.width=W;canvas.height=H;
-  var ctx=canvas.getContext('2d');
-  var pts=[[.5,.5],[.5,.11],[.81,.27],[.81,.73],[.5,.89],[.19,.73],[.19,.27]];
-  ctx.strokeStyle='rgba(91,192,255,.22)';ctx.lineWidth=1;
-  for(var i=1;i<7;i++){
-    ctx.beginPath();
-    ctx.moveTo(pts[0][0]*W,pts[0][1]*H);
-    ctx.lineTo(pts[i][0]*W,pts[i][1]*H);
-    ctx.stroke();
-  }
+  _smC=_smC||document.getElementById('svcMiniCanvas');
+  if(!_smC)return;
+  _smW=_smC.offsetWidth;_smH=_smC.offsetHeight;
+  if(!_smW||!_smH)return;
+  _smC.width=_smW;_smC.height=_smH;
+  _smX=_smX||_smC.getContext('2d');
+  if(!_smRaf)_smRaf=requestAnimationFrame(svcMiniFrame);
 }
+
+function svcMiniFrame(){
+  _smRaf=requestAnimationFrame(svcMiniFrame);
+  if(!_smX||!_smW)return;
+  _smX.clearRect(0,0,_smW,_smH);
+  _smEdges.forEach(function(e){
+    _smX.beginPath();
+    _smX.moveTo(_smPts[e[0]][0]*_smW,_smPts[e[0]][1]*_smH);
+    _smX.lineTo(_smPts[e[1]][0]*_smW,_smPts[e[1]][1]*_smH);
+    _smX.strokeStyle='rgba(91,192,255,.12)';_smX.lineWidth=1;_smX.stroke();
+  });
+  _smPulses.forEach(function(p){
+    p.t+=p.s;if(p.t>1)p.t=0;
+    var a=_smPts[p.e[0]],b=_smPts[p.e[1]];
+    var x=(a[0]+(b[0]-a[0])*p.t)*_smW;
+    var y=(a[1]+(b[1]-a[1])*p.t)*_smH;
+    var g=_smX.createRadialGradient(x,y,0,x,y,4);
+    g.addColorStop(0,'rgba(91,192,255,.9)');
+    g.addColorStop(1,'rgba(91,192,255,0)');
+    _smX.beginPath();_smX.arc(x,y,4,0,Math.PI*2);_smX.fillStyle=g;_smX.fill();
+  });
+}
+
 window.addEventListener('resize',svcMiniDraw);
 </script>
 <!-- CARD TOGGLE -->
