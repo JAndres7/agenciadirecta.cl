@@ -311,7 +311,6 @@ body.ad-open > footer{
   max-height:0;overflow:hidden;opacity:0;margin-top:0;
   transition:max-height .35s ease, opacity .3s ease, margin-top .3s ease;
 }
-.card:hover .card-desc,
 .card.card--open .card-desc{
   max-height:120px;opacity:1;margin-top:10px;
 }
@@ -397,16 +396,17 @@ body.ad-open > footer{
 .promo-desc{font-size:15px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:32px}
 .promo-note{font-size:13px;color:rgba(255,255,255,.4);margin-top:14px}
 .btn-cta-full{
-  display:flex;align-items:center;justify-content:center;width:100%;padding:17px;border-radius:90px;
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:17px 37px;border-radius:90px;
   background:linear-gradient(135deg,rgba(17,85,204,.7),rgba(45,156,219,.7));color:#fff;
-  font-family:'Outfit',sans-serif;font-size:17px;font-weight:700;
-  text-decoration:none;cursor:pointer;
+  font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;
+  text-decoration:none;cursor:pointer;-webkit-appearance:none;appearance:none;
   box-shadow:0 4px 32px rgba(17,85,204,.5),inset 0 1px 0 rgba(255,255,255,.15);
   border:1px solid rgba(80,160,255,.35);
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
   transition:transform .2s,box-shadow .2s,background .2s;
 }
 .btn-cta-full:hover{transform:translateY(-3px);background:linear-gradient(135deg,rgba(17,85,204,.9),rgba(45,156,219,.9));box-shadow:0 8px 40px rgba(17,85,204,.65),inset 0 1px 0 rgba(255,255,255,.2)}
+.btn-cta-full svg{width:17px;height:17px;flex-shrink:0}
 
 /* ────────────────────────────
    EMPECEMOS — form
@@ -593,16 +593,18 @@ body.ad-open > footer{
   .steps{grid-template-columns:1fr}
   .metric-grid{
     display:flex!important;
+    width:100%;
     overflow-x:auto;
     scroll-snap-type:x mandatory;
     -webkit-overflow-scrolling:touch;
     scrollbar-width:none;
     gap:12px!important;
     padding:4px 0 12px;
+    margin-top:24px;
   }
   .metric-grid::-webkit-scrollbar{display:none}
   .metric-card{
-    flex:0 0 75%!important;
+    flex:0 0 80%!important;
     scroll-snap-align:start;
     text-align:center;
     min-width:0;
@@ -610,7 +612,7 @@ body.ad-open > footer{
   .form-row{grid-template-columns:1fr}
 
   /* Colapsar grids de 2 columnas */
-  .col2-split{--split-cols:1fr;--col-pad:0px;grid-template-columns:1fr!important}
+  .col2-split{--split-cols:1fr;--col-pad:0px;grid-template-columns:1fr!important;gap:48px!important}
   .col2-split > div[style*="align-self:stretch"]{display:none!important}
 
   /* Contener overflow horizontal */
@@ -620,7 +622,9 @@ body.ad-open > footer{
   .form-split{grid-template-columns:1fr;gap:40px}
 
   /* Hero */
-  .hero-content{padding:20px 24px 80px;text-align:center;align-items:center}
+  .hero-nav-spacer{height:72px}
+  .section--hero{min-height:auto}
+  .hero-content{padding:20px 24px 60px;text-align:center;align-items:center;justify-content:flex-start}
   .hero-title{text-align:center}
   .cta-row{flex-direction:column;align-items:center;gap:12px}
   .cta-row a{text-align:center;justify-content:center}
@@ -1150,7 +1154,10 @@ body.ad-open > footer{
             <label>Cuéntanos más (opcional)</label>
             <textarea placeholder="Describe brevemente tu situación actual y qué resultado buscas..."></textarea>
           </div>
-          <button type="submit" class="btn-cta-full">Solicitar Auditoría Gratis →</button>
+          <button type="submit" class="btn-cta-full">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+            Solicitar Auditoría Gratis
+          </button>
           <p class="form-note">Al enviar aceptas nuestra política de privacidad. Sin spam, prometido.</p>
         </form>
       </div>
