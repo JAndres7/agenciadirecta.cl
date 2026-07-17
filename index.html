@@ -595,14 +595,15 @@ body.ad-open > footer{
     scroll-snap-type:x mandatory;
     -webkit-overflow-scrolling:touch;
     scrollbar-width:none;
-    gap:14px!important;
-    padding:4px 15% 12px;
+    gap:12px!important;
+    padding:4px 0 12px;
   }
   .metric-grid::-webkit-scrollbar{display:none}
   .metric-card{
-    flex:0 0 70%!important;
-    scroll-snap-align:center;
+    flex:0 0 75%!important;
+    scroll-snap-align:start;
     text-align:center;
+    min-width:0;
   }
   .form-row{grid-template-columns:1fr}
 
@@ -611,7 +612,7 @@ body.ad-open > footer{
   .col2-split > div[style*="align-self:stretch"]{display:none!important}
 
   /* Contener overflow horizontal */
-  .section,.inner{max-width:100%;overflow-x:hidden}
+  .section{max-width:100vw;overflow-x:hidden}
 
   /* Form split */
   .form-split{grid-template-columns:1fr;gap:40px}
