@@ -152,7 +152,9 @@ body.ad-open > footer{
 }
 .morph-text{
   position:absolute;left:50%;top:0;transform:translateX(-50%);
-  white-space:nowrap;font-weight:400;color:#fff;
+  white-space:nowrap;font-weight:700;color:#fff;
+  text-transform:uppercase;letter-spacing:.04em;
+  text-shadow:0 0 18px rgba(255,255,255,.9),0 0 40px rgba(180,220,255,.7),0 0 80px rgba(120,190,255,.4);
   will-change:filter,opacity;font-size:1em;
 }
 .cta-row{display:flex;gap:20px;align-items:center;justify-content:center;flex-wrap:wrap}
@@ -628,6 +630,8 @@ body.ad-open > footer{
   .hero-title{text-align:center}
   .cta-row{flex-direction:column;align-items:center;gap:12px}
   .cta-row a{text-align:center;justify-content:center}
+  .btn-primary,.btn-wa,.btn-cta-full{padding:14px 30px;font-size:13px;width:100%;justify-content:center}
+  .btn-primary svg,.btn-wa svg,.btn-cta-full svg{width:14px!important;height:14px!important}
 
   /* Footer */
   .footer-grid{grid-template-columns:1fr;gap:36px}
@@ -711,7 +715,8 @@ body.ad-open > footer{
     border:1.5px solid rgba(91,192,255,.65)!important;
     box-shadow:0 0 0 1px rgba(91,192,255,.25),0 0 24px rgba(91,192,255,.25),0 8px 32px rgba(0,0,0,.5)!important;
   }
-  .form-group{margin-bottom:6px;gap:4px}
+  .form-row{margin-bottom:8px}
+  .form-group{margin-bottom:8px;gap:4px}
   .form-group input,
   .form-group select,
   .form-group textarea{
@@ -722,7 +727,7 @@ body.ad-open > footer{
   }
   .phone-row{min-width:0;overflow:hidden}
   .form-group label{font-size:12px}
-  .form-badge{font-size:11px;margin-bottom:16px}
+  .form-badge{font-size:11px;margin-bottom:12px}
 }
 
 /* ── Móvil pequeño 380px ── */
@@ -806,7 +811,7 @@ body.ad-open > footer{
   <div class="hero-nav-spacer"></div>
   <div class="hero-content">
     <h1 class="hero-title">
-      <span class="hero-line1">Escalamos tu negocio con sistemas de</span>
+      <span class="hero-line1">Escalamos tu negocio<br>con sistemas de</span>
       <span class="morph-wrap" id="morphWrap">
         <span class="morph-text" id="morphA">Inteligencia artificial</span>
         <span class="morph-text" id="morphB">Automatización digital</span>
@@ -968,7 +973,7 @@ body.ad-open > footer{
   <div class="inner">
     <span class="s-label">El Proceso</span>
     <h2 class="s-title">Así es como trabajamos</h2>
-    <p class="s-sub">Sin procesos complicados. En tres pasos tienes un sistema funcionando para tu negocio.</p>
+    <p class="s-sub">Sin complicaciones. En tres pasos tienes un sistema funcionando para tu negocio.</p>
     <div class="steps-wrap" style="position:relative">
       <canvas id="procesoCanvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0"></canvas>
       <div class="steps" style="position:relative;z-index:1">
