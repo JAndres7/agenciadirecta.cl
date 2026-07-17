@@ -663,9 +663,9 @@ br.br-mobile{display:none}
   .vbanner-quote{font-size:18px!important;line-height:1.5!important}
   .vbanner-logo img{height:36px!important}
 
-  /* Servicios network → lista simple */
+  /* Servicios network → mini diagrama */
   #svcNetwork{display:none}
-  #svcFallback{display:grid!important}
+  #svcMiniWrap{display:block!important}
 
   /* Nosotros fotos → 1 columna, -10% tamaño */
   [style*="max-width:75%"][style*="grid-template-columns:1fr 1fr"]{
@@ -756,11 +756,19 @@ br.br-mobile{display:none}
 .svc-label{font-family:'Outfit',sans-serif;font-size:12px;font-weight:500;color:rgba(255,255,255,.78);text-align:center;max-width:100px;line-height:1.35}
 .svc-tooltip{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);width:188px;background:rgba(4,10,28,.97);border:1px solid rgba(91,192,255,.28);border-radius:10px;padding:12px 14px;font-family:'Outfit',sans-serif;font-size:13px;color:rgba(255,255,255,.72);line-height:1.5;text-align:center;opacity:0;pointer-events:none;transition:opacity .18s;box-shadow:0 4px 20px rgba(0,0,0,.7),0 0 14px rgba(91,192,255,.1);z-index:20;white-space:normal}
 .svc-node:hover .svc-tooltip{opacity:1}
-#svcFallback > div > p{max-height:0;overflow:hidden;opacity:0;margin-top:0;transition:max-height .3s ease,opacity .25s ease,margin-top .25s ease}
-#svcFallback > div.svc-open > p{max-height:120px;opacity:1;margin-top:4px}
-#svcFallback > div{cursor:pointer}
-#svcFallback > div .svc-circle{transition:border-color .25s,box-shadow .25s}
-#svcFallback > div.svc-open .svc-circle{border-color:rgba(91,192,255,.85);box-shadow:0 0 0 1px rgba(91,192,255,.4),0 0 28px rgba(91,192,255,.5),0 0 60px rgba(91,192,255,.2)}
+/* Mini network móvil */
+.svc-mn{position:absolute;transform:translate(-50%,-50%);cursor:pointer;z-index:2;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+.svc-mc{width:50px;height:50px;border-radius:50%;background:rgba(2,5,18,.92);border:1.5px solid rgba(91,192,255,.4);box-shadow:0 0 0 1px rgba(91,192,255,.12),0 0 18px rgba(91,192,255,.18);display:flex;align-items:center;justify-content:center;transition:border-color .25s,box-shadow .25s}
+.svc-mc svg{width:21px;height:21px;stroke:#fff;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 4px rgba(255,255,255,.55))}
+.svc-mc.svc-hub{width:68px;height:68px;border-color:rgba(91,192,255,.72);box-shadow:0 0 0 1.5px rgba(91,192,255,.35),0 0 28px rgba(91,192,255,.55),0 0 64px rgba(91,192,255,.22);animation:svcHubPulse 3s ease-in-out infinite}
+.svc-mc.svc-hub svg{width:30px;height:30px}
+@keyframes svcHubPulse{0%,100%{box-shadow:0 0 0 1.5px rgba(91,192,255,.35),0 0 28px rgba(91,192,255,.55),0 0 64px rgba(91,192,255,.22)}50%{box-shadow:0 0 0 2px rgba(91,192,255,.6),0 0 44px rgba(91,192,255,.8),0 0 90px rgba(91,192,255,.38)}}
+.svc-mn.mn-active{transform:translate(-50%,-50%) scale(1.35);z-index:10}
+.svc-mn.mn-active .svc-mc{border-color:rgba(91,192,255,.95);box-shadow:0 0 0 1.5px rgba(91,192,255,.5),0 0 36px rgba(91,192,255,.75),0 0 80px rgba(91,192,255,.35)}
+.svc-mn.mn-active .svc-mc.svc-hub{animation:none}
+#svcMiniTip{margin:20px auto 0;width:min(82vw,290px);background:rgba(4,10,28,.97);border:1px solid rgba(91,192,255,.3);border-radius:14px;padding:0 16px;max-height:0;overflow:hidden;opacity:0;transition:max-height .35s ease,opacity .25s ease,padding .25s ease;font-family:'Outfit',sans-serif;font-size:13px;color:rgba(255,255,255,.72);line-height:1.55;text-align:center;box-shadow:0 4px 24px rgba(0,0,0,.7),0 0 16px rgba(91,192,255,.12)}
+#svcMiniTip.tip-open{max-height:140px;opacity:1;padding:14px 16px}
+#svcMiniTip strong{display:block;color:#fff;font-weight:600;margin-bottom:6px;font-size:14px}
 </style>
 </head>
 <body>
@@ -1571,15 +1579,60 @@ br.br-mobile{display:none}
 })();
 </script>
 
-<!-- SVC FALLBACK TOGGLE -->
+<!-- SVC MINI NETWORK -->
 <script>
-document.querySelectorAll('#svcFallback > div').forEach(function(node){
-  node.addEventListener('click',function(){
-    var isOpen=this.classList.contains('svc-open');
-    document.querySelectorAll('#svcFallback > div').forEach(function(n){n.classList.remove('svc-open');});
-    if(!isOpen)this.classList.add('svc-open');
+var svcMiniData=[
+  {label:'Estrategia Digital',desc:'Diseñamos la hoja de ruta para que tu negocio crezca de forma ordenada y medible.'},
+  {label:'Automatización e IA',desc:'Sistemas inteligentes que automatizan tareas y atención al cliente 24/7.'},
+  {label:'Publicidad Digital',desc:'Campañas en Meta, Google y TikTok para atraer oportunidades reales.'},
+  {label:'Conversión Web',desc:'Páginas y procesos diseñados para convertir más visitas en clientes.'},
+  {label:'Captación Continua',desc:'Sistema que atrae clientes de forma predecible y automática.'},
+  {label:'Gestión de Redes',desc:'Contenido estratégico para posicionar tu marca en redes sociales.'},
+  {label:'Email Marketing',desc:'Secuencias automatizadas que nutren tus contactos y los convierten en clientes.'},
+];
+function svcMiniDraw(){
+  var canvas=document.getElementById('svcMiniCanvas');
+  if(!canvas)return;
+  var W=canvas.offsetWidth,H=canvas.offsetHeight;
+  if(!W||!H)return;
+  canvas.width=W;canvas.height=H;
+  var ctx=canvas.getContext('2d');
+  var pts=[[.5,.5],[.5,.11],[.81,.27],[.81,.73],[.5,.89],[.19,.73],[.19,.27]];
+  ctx.strokeStyle='rgba(91,192,255,.22)';ctx.lineWidth=1;
+  for(var i=1;i<7;i++){
+    ctx.beginPath();
+    ctx.moveTo(pts[0][0]*W,pts[0][1]*H);
+    ctx.lineTo(pts[i][0]*W,pts[i][1]*H);
+    ctx.stroke();
+  }
+}
+var svcMiniActive=-1;
+document.querySelectorAll('.svc-mn').forEach(function(node){
+  node.addEventListener('click',function(e){
+    e.stopPropagation();
+    var idx=parseInt(this.dataset.i);
+    var tip=document.getElementById('svcMiniTip');
+    var wasActive=svcMiniActive===idx;
+    document.querySelectorAll('.svc-mn').forEach(function(n){n.classList.remove('mn-active');});
+    if(wasActive){
+      tip.classList.remove('tip-open');
+      svcMiniActive=-1;
+    } else {
+      this.classList.add('mn-active');
+      document.getElementById('svcMiniTipTitle').textContent=svcMiniData[idx].label;
+      document.getElementById('svcMiniTipDesc').textContent=svcMiniData[idx].desc;
+      tip.classList.add('tip-open');
+      svcMiniActive=idx;
+    }
   });
 });
+document.addEventListener('click',function(){
+  var tip=document.getElementById('svcMiniTip');
+  if(tip)tip.classList.remove('tip-open');
+  document.querySelectorAll('.svc-mn').forEach(function(n){n.classList.remove('mn-active');});
+  svcMiniActive=-1;
+});
+window.addEventListener('resize',svcMiniDraw);
 </script>
 <!-- CARD TOGGLE -->
 <script>
@@ -1621,51 +1674,29 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
       <span class="s-label">Lo que hacemos</span>
       <h2 class="s-title" style="font-weight:500;white-space:nowrap">Todo lo que necesitas para escalar tu negocio</h2>
       <p class="s-sub" style="white-space:nowrap">Combinamos estrategia, tecnología e inteligencia artificial para construir sistemas que trabajan para ti.</p>
-      <!-- FALLBACK MÓVIL: grilla estilo nodos -->
-      <div id="svcFallback" style="display:none;grid-template-columns:1fr 1fr;gap:28px 16px;margin:32px 0 48px">
-
-        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
-          <div class="svc-circle svc-hub"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div>
-          <span class="svc-label">Estrategia Digital</span>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.5">Diseñamos la hoja de ruta para que tu negocio crezca de forma ordenada y medible.</p>
+      <!-- MINI NETWORK MÓVIL -->
+      <div id="svcMiniWrap" style="display:none;margin:32px 0 48px">
+        <div id="svcMini" style="position:relative;width:min(84vw,300px);height:min(84vw,300px);margin:0 auto">
+          <canvas id="svcMiniCanvas" style="position:absolute;inset:0;pointer-events:none"></canvas>
+          <!-- 0: hub centro -->
+          <div class="svc-mn" data-i="0" style="left:50%;top:50%"><div class="svc-mc svc-hub"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div></div>
+          <!-- 1: Automatización IA — arriba -->
+          <div class="svc-mn" data-i="1" style="left:50%;top:11%"><div class="svc-mc"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="6" height="6"/><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="1" x2="9" y2="3"/><line x1="15" y1="1" x2="15" y2="3"/><line x1="9" y1="21" x2="9" y2="23"/><line x1="15" y1="21" x2="15" y2="23"/><line x1="1" y1="9" x2="3" y2="9"/><line x1="1" y1="15" x2="3" y2="15"/><line x1="21" y1="9" x2="23" y2="9"/><line x1="21" y1="15" x2="23" y2="15"/></svg></div></div>
+          <!-- 2: Publicidad — arriba-derecha -->
+          <div class="svc-mn" data-i="2" style="left:81%;top:27%"><div class="svc-mc"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div></div>
+          <!-- 3: Conversión Web — abajo-derecha -->
+          <div class="svc-mn" data-i="3" style="left:81%;top:73%"><div class="svc-mc"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div></div>
+          <!-- 4: Captación — abajo -->
+          <div class="svc-mn" data-i="4" style="left:50%;top:89%"><div class="svc-mc"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div></div>
+          <!-- 5: Redes — abajo-izquierda -->
+          <div class="svc-mn" data-i="5" style="left:19%;top:73%"><div class="svc-mc"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div></div>
+          <!-- 6: Email — arriba-izquierda -->
+          <div class="svc-mn" data-i="6" style="left:19%;top:27%"><div class="svc-mc"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div></div>
         </div>
-
-        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
-          <div class="svc-circle"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="6" height="6"/><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="1" x2="9" y2="3"/><line x1="15" y1="1" x2="15" y2="3"/><line x1="9" y1="21" x2="9" y2="23"/><line x1="15" y1="21" x2="15" y2="23"/><line x1="1" y1="9" x2="3" y2="9"/><line x1="1" y1="15" x2="3" y2="15"/><line x1="21" y1="9" x2="23" y2="9"/><line x1="21" y1="15" x2="23" y2="15"/></svg></div>
-          <span class="svc-label">Automatización e IA</span>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.5">Sistemas inteligentes que automatizan tareas y atención al cliente 24/7.</p>
+        <div id="svcMiniTip">
+          <strong id="svcMiniTipTitle"></strong>
+          <p id="svcMiniTipDesc" style="margin:0"></p>
         </div>
-
-        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
-          <div class="svc-circle"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-          <span class="svc-label">Publicidad Digital</span>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.5">Campañas en Meta, Google y TikTok para atraer oportunidades reales.</p>
-        </div>
-
-        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
-          <div class="svc-circle"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-          <span class="svc-label">Conversión Web</span>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.5">Páginas y procesos diseñados para convertir más visitas en clientes.</p>
-        </div>
-
-        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
-          <div class="svc-circle"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <span class="svc-label">Captación Continua</span>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.5">Sistema que atrae clientes de forma predecible y automática.</p>
-        </div>
-
-        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
-          <div class="svc-circle"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
-          <span class="svc-label">Gestión de Redes</span>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.5">Contenido estratégico para posicionar tu marca en redes sociales.</p>
-        </div>
-
-        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;grid-column:1/-1">
-          <div class="svc-circle"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <span class="svc-label">Email Marketing</span>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.5">Secuencias automatizadas que nutren tus contactos y los convierten en clientes.</p>
-        </div>
-
       </div>
 
       <!-- NETWORK VISUAL -->
@@ -1824,7 +1855,7 @@ function openAdPage(id){
   var page = document.getElementById(id);
   if(page){ page.classList.add('open'); page.scrollTop = 0; }
   document.body.classList.add('ad-open');
-  if(id==='page-servicios') svcNetworkResize();
+  if(id==='page-servicios'){svcNetworkResize();if(typeof svcMiniDraw==='function')svcMiniDraw();}
 }
 function closeAdPage(){
   document.querySelectorAll('.ad-page').forEach(function(p){p.classList.remove('open');});
