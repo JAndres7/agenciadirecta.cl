@@ -1615,7 +1615,8 @@ function svcMiniClick(idx){
 function svcMiniDraw(){
   _smC=_smC||document.getElementById('svcMiniCanvas');
   if(!_smC)return;
-  _smW=_smC.offsetWidth;_smH=_smC.offsetHeight;
+  var r=_smC.parentElement.getBoundingClientRect();
+  _smW=Math.round(r.width);_smH=Math.round(r.height);
   if(!_smW||!_smH)return;
   _smC.width=_smW;_smC.height=_smH;
   _smX=_smX||_smC.getContext('2d');
@@ -1688,7 +1689,7 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
       <!-- MINI NETWORK MÓVIL -->
       <div id="svcMiniWrap" style="display:none;margin:32px 0 48px">
         <div id="svcMini" style="position:relative;width:min(94vw,397px);height:min(94vw,397px);margin:0 auto">
-          <canvas id="svcMiniCanvas" style="position:absolute;inset:0;pointer-events:none"></canvas>
+          <canvas id="svcMiniCanvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"></canvas>
           <!-- 0: hub centro -->
           <div class="svc-mn" data-i="0" style="left:50%;top:50%" onclick="svcMiniClick(0)"><div class="svc-mc svc-hub"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div></div>
           <!-- 1: Automatización IA — arriba -->
