@@ -37,7 +37,7 @@
       "description":"Agencia de marketing digital en Antofagasta especializada en automatización e inteligencia artificial. Escalamos marcas del sector servicios, comercio, industrial y minero del norte de Chile con sistemas que generan clientes de forma predecible.",
       "url":"https://agenciadirecta.cl",
       "telephone":"+56953168857",
-      "email":"agenciadirecta.ia@gmail.com",
+      "email":"contacto@agenciadirecta.cl",
       "logo":{
         "@type":"ImageObject",
         "url":"https://agenciadirecta.cl/assets/logotipo-oficial-blanco.png",
@@ -915,7 +915,7 @@ br.br-mobile{display:none}
         <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
       </svg>
     </a>
-    <a href="https://mail.google.com/mail/?view=cm&to=agenciadirecta.ia@gmail.com" target="_blank" title="Email">
+    <a href="https://mail.google.com/mail/?view=cm&to=contacto@agenciadirecta.cl" target="_blank" title="Email">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
         <rect x="2" y="4" width="20" height="16" rx="3"/><polyline points="2,4 12,13 22,4"/>
       </svg>
@@ -1247,44 +1247,49 @@ br.br-mobile{display:none}
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           Respondemos en menos de 24 hrs
         </div>
-        <form>
+        <div id="leadFormSuccess" style="display:none;text-align:center;padding:48px 16px">
+          <p style="font-size:52px;margin-bottom:16px">✅</p>
+          <h3 style="color:#fff;font-size:20px;font-family:'Outfit',sans-serif;margin-bottom:12px">¡Mensaje recibido!</h3>
+          <p style="color:rgba(255,255,255,.7);font-size:15px;line-height:1.7;font-family:'Outfit',sans-serif">Te contactaremos en menos de 24 horas con tu auditoría personalizada.</p>
+        </div>
+        <form id="leadForm">
           <div class="form-row">
             <div class="form-group">
               <label>Nombre *</label>
-              <input type="text" placeholder="Tu nombre" required>
+              <input type="text" name="nombre" placeholder="Tu nombre" required>
             </div>
             <div class="form-group">
               <label>Empresa *</label>
-              <input type="text" placeholder="Nombre de tu empresa" required>
+              <input type="text" name="empresa" placeholder="Nombre de tu empresa" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label>Email *</label>
-              <input type="email" placeholder="tu@empresa.com" required>
+              <input type="email" name="email" placeholder="tu@empresa.com" required>
             </div>
             <div class="form-group">
               <label>WhatsApp *</label>
               <div class="phone-row">
                 <span class="phone-prefix">CL +56</span>
-                <input type="tel" placeholder="9 1234 5678" required style="flex:1">
+                <input type="tel" name="telefono" placeholder="9 1234 5678" required style="flex:1">
               </div>
             </div>
           </div>
           <div class="form-group">
             <label>¿Qué necesitas? *</label>
-            <select required>
+            <select name="servicio" id="servicioSelect" required>
               <option value="" disabled selected>Selecciona una opción</option>
-              <option>Automatización e IA</option>
-              <option>Publicidad digital</option>
+              <option>Automatización de procesos</option>
+              <option>Presencia digital</option>
               <option>Sitio web profesional</option>
               <option>Agente IA para mi negocio</option>
-              <option>Todo lo anterior</option>
+              <option value="Otro">Otro</option>
             </select>
           </div>
           <div class="form-group">
             <label>Presupuesto inicial aproximado</label>
-            <select>
+            <select name="presupuesto">
               <option value="" disabled selected>Selecciona un rango</option>
               <option>Menos de $300.000 CLP</option>
               <option>$300.000 – $800.000 CLP</option>
@@ -1293,14 +1298,14 @@ br.br-mobile{display:none}
             </select>
           </div>
           <div class="form-group">
-            <label>Cuéntanos más (opcional)</label>
-            <textarea placeholder="Describe brevemente tu situación actual y qué resultado buscas..."></textarea>
+            <label id="notasLabel">Cuéntanos más (opcional)</label>
+            <textarea name="notas" id="notasTextarea" placeholder="Describe brevemente tu situación actual y qué resultado buscas..."></textarea>
           </div>
-          <button type="submit" class="btn-cta-full">
+          <button type="submit" class="btn-cta-full" id="leadFormBtn">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
             Solicitar Auditoría Gratis
           </button>
-          <p class="form-note">Al enviar aceptas nuestra política de privacidad. Sin spam, prometido.</p>
+          <p class="form-note">Al enviar aceptas nuestra <a href="/privacidad.html" style="color:rgba(255,255,255,.5)">política de privacidad</a>. Sin spam, prometido.</p>
         </form>
       </div>
     </div>
@@ -1399,7 +1404,7 @@ br.br-mobile{display:none}
       <h4>Contacto</h4>
       <ul>
         <li><a href="https://wa.me/56953168857" target="_blank">+56 9 5316 8857</a></li>
-        <li><a href="https://mail.google.com/mail/?view=cm&to=agenciadirecta.ia@gmail.com" target="_blank">agenciadirecta.ia@gmail.com</a></li>
+        <li><a href="https://mail.google.com/mail/?view=cm&to=contacto@agenciadirecta.cl" target="_blank">contacto@agenciadirecta.cl</a></li>
         <li>Antofagasta, Chile</li>
       </ul>
       <div class="footer-social-mobile">
@@ -1408,7 +1413,7 @@ br.br-mobile{display:none}
             <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
           </svg>
         </a>
-        <a href="https://mail.google.com/mail/?view=cm&to=agenciadirecta.ia@gmail.com" target="_blank" title="Email">
+        <a href="https://mail.google.com/mail/?view=cm&to=contacto@agenciadirecta.cl" target="_blank" title="Email">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="4" width="20" height="16" rx="3"/><polyline points="2,4 12,13 22,4"/>
           </svg>
@@ -1431,7 +1436,7 @@ br.br-mobile{display:none}
   </div>
   <div class="footer-bottom">
     <p>© 2026 Agencia Directa — Marketing digital, automatización e inteligencia artificial. Antofagasta, Chile.</p>
-    <a href="#">Política de Privacidad</a>
+    <a href="/privacidad.html">Política de Privacidad</a>
   </div>
 </footer>
 
@@ -2128,6 +2133,71 @@ function closeAdPage(){
   60%{box-shadow:0 4px 20px rgba(37,211,102,.5),0 0 0 12px rgba(37,211,102,0)}
 }
 </style>
+
+<!-- FORM WEBHOOK -->
+<script>
+(function(){
+  var form = document.getElementById('leadForm');
+  var btn  = document.getElementById('leadFormBtn');
+  var success = document.getElementById('leadFormSuccess');
+  if(!form) return;
+
+  // "Otro" → activa textarea
+  var servicioSelect = document.getElementById('servicioSelect');
+  var notasLabel = document.getElementById('notasLabel');
+  var notasTextarea = document.getElementById('notasTextarea');
+  servicioSelect.addEventListener('change', function(){
+    if(this.value === 'Otro'){
+      notasLabel.textContent = 'Cuéntanos más *';
+      notasTextarea.required = true;
+      notasTextarea.placeholder = 'Cuéntanos qué necesitas y te preparamos una propuesta a medida...';
+      notasTextarea.style.borderColor = 'rgba(46,255,180,.5)';
+      notasTextarea.scrollIntoView({behavior:'smooth', block:'center'});
+      setTimeout(function(){ notasTextarea.focus(); }, 400);
+    } else {
+      notasLabel.textContent = 'Cuéntanos más (opcional)';
+      notasTextarea.required = false;
+      notasTextarea.placeholder = 'Describe brevemente tu situación actual y qué resultado buscas...';
+      notasTextarea.style.borderColor = '';
+    }
+  });
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    btn.disabled = true;
+    btn.style.opacity = '.6';
+    btn.childNodes[btn.childNodes.length-1].textContent = ' Enviando...';
+
+    var tel = form.querySelector('[name="telefono"]').value.replace(/\D/g,'');
+    var data = {
+      nombre:      form.querySelector('[name="nombre"]').value.trim(),
+      empresa:     form.querySelector('[name="empresa"]').value.trim(),
+      email:       form.querySelector('[name="email"]').value.trim(),
+      telefono:    '+56' + tel,
+      servicio:    form.querySelector('[name="servicio"]').value,
+      presupuesto: form.querySelector('[name="presupuesto"]').value,
+      notas:       form.querySelector('[name="notas"]').value.trim(),
+      fuente:      'Sitio Web'
+    };
+
+    try {
+      await fetch('https://leccion-la-tribu-n8n.xyywd9.easypanel.host/webhook/lead-landing', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+      });
+      form.style.display = 'none';
+      success.style.display = 'block';
+      if(window.dataLayer) window.dataLayer.push({event:'lead_form_submit'});
+    } catch(err) {
+      btn.disabled = false;
+      btn.style.opacity = '1';
+      btn.childNodes[btn.childNodes.length-1].textContent = ' Solicitar Auditoría Gratis';
+      alert('Hubo un error al enviar. Por favor inténtalo de nuevo o escríbenos por WhatsApp.');
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
