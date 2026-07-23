@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auditoría Digital — Centro Médico Angamos</title>
+  <style>
+    :root {
+      --primary: #1a4f7a;
+      --accent: #2e9cca;
+      --red: #e53e3e;
+      --yellow: #d69e2e;
+      --green: #38a169;
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --text: #1a202c;
+      --muted: #718096;
+      --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, #0d2d4a 100%);
+      color: white;
+      padding: 48px 40px 40px;
+    }
+
+    header .label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    header h1 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    header .sub {
+      font-size: 15px;
+      color: #a0c4dd;
+    }
+
+    header .date {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #7baec8;
+    }
+
+    /* EXECUTIVE SUMMARY */
+    .summary-bar {
+      background: #fff3cd;
+      border-left: 5px solid #d69e2e;
+      padding: 20px 40px;
+      font-size: 15px;
+      color: #744210;
+    }
+
+    .summary-bar strong { font-weight: 700; }
+
+    /* CONTENT */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* SECTION TITLES */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 48px 0 20px;
+    }
+
+    .section-title .icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .section-title h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .section-title .section-sub {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* TWO COLUMNS */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 640px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+
+    /* LISTS */
+    ul.check, ul.cross, ul.plain {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.check li, ul.cross li, ul.plain li {
+      padding: 5px 0;
+      font-size: 14px;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    ul.check li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; }
+    ul.cross li::before { content: "✗"; color: var(--red); font-weight: 700; flex-shrink: 0; }
+    ul.plain li::before { content: "→"; color: var(--accent); flex-shrink: 0; }
+
+    /* ALERT BOXES */
+    .alert {
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 14px;
+      margin-bottom: 12px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .alert .alert-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+    .alert-red { background: #fff5f5; border-left: 4px solid var(--red); color: #742a2a; }
+    .alert-yellow { background: #fffff0; border-left: 4px solid var(--yellow); color: #744210; }
+    .alert-green { background: #f0fff4; border-left: 4px solid var(--green); color: #22543d; }
+
+    /* REPUTATION */
+    .rep-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 640px) {
+      .rep-grid { grid-template-columns: 1fr; }
+    }
+
+    .rep-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .rep-card .platform { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    .rep-card .count { font-size: 28px; font-weight: 800; color: var(--primary); margin: 8px 0 4px; }
+    .rep-card .status { font-size: 12px; }
+    .status-bad { color: var(--red); font-weight: 600; }
+    .status-good { color: var(--green); font-weight: 600; }
+    .status-neutral { color: var(--yellow); font-weight: 600; }
+
+    /* FUNNEL */
+    .funnel {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+
+    .funnel-step {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 14px;
+    }
+
+    .funnel-step .step-name { font-weight: 700; width: 160px; color: var(--primary); flex-shrink: 0; }
+    .funnel-step .step-desc { color: var(--muted); flex: 1; }
+    .funnel-step .step-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      flex-shrink: 0;
+    }
+    .badge-red { background: #fed7d7; color: #c53030; }
+    .badge-yellow { background: #fefcbf; color: #975a16; }
+    .badge-green { background: #c6f6d5; color: #276749; }
+
+    /* PRIORITY TABLE */
+    .priority-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .priority-table th {
+      text-align: left;
+      padding: 10px 16px;
+      background: var(--primary);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .priority-table th:first-child { border-radius: 8px 0 0 0; }
+    .priority-table th:last-child { border-radius: 0 8px 0 0; }
+
+    .priority-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .priority-table tr:last-child td { border-bottom: none; }
+    .priority-table tr:nth-child(even) td { background: #f8fafc; }
+
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 6px;
+    }
+
+    .dot-red { background: var(--red); }
+    .dot-yellow { background: var(--yellow); }
+    .dot-green { background: var(--green); }
+
+    /* BRAND COHERENCE */
+    .brand-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .brand-table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand-table td:first-child { font-weight: 600; color: var(--primary); width: 200px; }
+    .brand-table tr:last-child td { border-bottom: none; }
+
+    /* FOOTER */
+    footer {
+      background: var(--primary);
+      color: #a0c4dd;
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+    }
+
+    /* QUOTE */
+    blockquote {
+      background: #eef6ff;
+      border-left: 4px solid var(--accent);
+      padding: 14px 18px;
+      font-style: italic;
+      font-size: 14px;
+      color: #2c5282;
+      border-radius: 0 8px 8px 0;
+      margin: 12px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-right: 4px;
+    }
+
+    .tag-red { background: #fed7d7; color: #c53030; }
+    .tag-yellow { background: #fefcbf; color: #975a16; }
+
+    hr.divider {
+      border: none;
+      border-top: 2px dashed var(--border);
+      margin: 8px 0 16px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="label">Auditoría de Presencia Digital</div>
+  <h1>Centro Médico Angamos</h1>
+  <div class="sub">centromedicoangamos.cl &nbsp;|&nbsp; Antofagasta, Chile</div>
+  <div class="date">Junio 2026</div>
+</header>
+
+<!-- SUMMARY BAR -->
+<div class="summary-bar">
+  <strong>Resumen ejecutivo:</strong> El centro tiene una base digital sólida — web, app, WhatsApp, redes sociales — pero está perdiendo pacientes por tres problemas críticos: <strong>atención administrativa deficiente</strong>, <strong>ausencia total de precios</strong> en la web, y <strong>redes sociales sin estrategia de conversión</strong>.
+</div>
+
+<main>
+
+  <!-- SECCION 1: WEB -->
+  <div class="section-title">
+    <div class="icon">🌐</div>
+    <div>
+      <h2>1. Sitio Web</h2>
+      <div class="section-sub">centromedicoangamos.cl</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <h3>Lo que funciona</h3>
+      <ul class="check">
+        <li>Diseño profesional y limpio</li>
+        <li>4 números de WhatsApp + teléfono + email</li>
+        <li>App móvil para descargar exámenes</li>
+        <li>Acreditación Superintendencia de Salud visible</li>
+        <li>Horarios claros (lunes a sábado)</li>
+        <li>Más de 30 especialidades médicas</li>
+        <li>Reserva de citas online</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Problemas detectados</h3>
+      <ul class="cross">
+        <li>Sin precios ni rangos de tarifas</li>
+        <li>Slogan no refleja lo que ofrecen</li>
+        <li>Solo 3 testimonios sin foto ni nombre real</li>
+        <li>Sin blog ni contenido que genere tráfico SEO</li>
+        <li>Páginas de especialidad sin médico ni CTA</li>
+        <li>Sin botón flotante de WhatsApp en móvil</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="alert alert-red">
+    <div class="alert-icon">🚨</div>
+    <div><strong>Crítico — Sin precios en ningún lugar.</strong> No hay ni una sola tarifa en toda la web. Los propios pacientes en reseñas destacan que tienen "los aranceles más convenientes de la ciudad", pero ese diferenciador no está en la web. La falta de precios genera desconfianza y envía a los pacientes a llamar a la competencia.</div>
+  </div>
+
+  <div class="alert alert-yellow">
+    <div class="alert-icon">⚠️</div>
+    <div><strong>Propuesta de valor confusa.</strong> El slogan actual es <em>"Claridad en cada imagen, precisión en cada diagnóstico"</em> — suena a clínica de imágenes, no a un centro médico integral con 30+ especialidades.</div>
+  </div>
+
+  <!-- SECCION 2: REPUTACION -->
+  <div class="section-title">
+    <div class="icon">⭐</div>
+    <div>
+      <h2>2. Reputación Online</h2>
+      <div class="section-sub">Chilopina, Doctoralia, Google</div>
+    </div>
+  </div>
+
+  <div class="rep-grid">
+    <div class="rep-card">
+      <div class="platform">Chilopina</div>
+      <div class="count">107</div>
+      <div>opiniones</div>
+      <div class="status status-bad">Puntuación baja</div>
+    </div>
+    <div class="rep-card">
+      <div class="platform">Doctoralia</div>
+      <div class="count">21</div>
+      <div>reseñas</div>
+      <div class="status status-good">Muy positiva</div>
+    </div>
+    <div class="rep-card">
+      <div class="platform">Google Maps</div>
+      <div class="count">—</div>
+      <div>sin datos</div>
+      <div class="status status-neutral">Por medir</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <h3>Quejas más repetidas</h3>
+      <ul class="cross">
+        <li>Desorganización en colas y turnos</li>
+        <li>Call center con mala actitud y poca empatía</li>
+        <li>Desorden en la entrega de exámenes</li>
+      </ul>
+      <blockquote>"La atención por el call center muy mala, muy poca empatía, nada de cordialidad"</blockquote>
+    </div>
+    <div class="card">
+      <h3>Fortalezas (no comunicadas)</h3>
+      <ul class="check">
+        <li>Laboratorio clínico muy valorado</li>
+        <li>Médicos excelentes y humanos</li>
+        <li>Precios competitivos en la ciudad</li>
+        <li>Instalaciones modernas y equipadas</li>
+      </ul>
+      <blockquote>"Aranceles más convenientes de la ciudad"</blockquote>
+    </div>
+  </div>
+
+  <div class="alert alert-red">
+    <div class="alert-icon">🚨</div>
+    <div><strong>El problema principal:</strong> Los puntos fuertes del centro no están comunicados en la web ni en redes. Las quejas sí están visibles para todos en internet, y muchas no tienen respuesta del centro.</div>
+  </div>
+
+  <!-- SECCION 3: REDES SOCIALES -->
+  <div class="section-title">
+    <div class="icon">📱</div>
+    <div>
+      <h2>3. Redes Sociales</h2>
+      <div class="section-sub">Instagram · Facebook</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <h3>Facebook — cmangamos</h3>
+      <ul class="plain">
+        <li>2.180 likes en la página</li>
+        <li>Actividad detectada pero sin estrategia</li>
+        <li>Contenido principalmente institucional</li>
+        <li>Sin frecuencia de publicación definida</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Instagram — centromedicoangamos</h3>
+      <ul class="plain">
+        <li>Cuenta activa con Reels publicados</li>
+        <li>Sin datos de seguidores verificables</li>
+        <li>Contenido de presentación del centro</li>
+        <li>Sin TikTok ni LinkedIn detectados</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="alert alert-red">
+    <div class="alert-icon">🚨</div>
+    <div><strong>Dos cuentas de Instagram.</strong> Existen al menos dos perfiles: @centromedicoangamos y @centro_medico_angamos. Esto fragmenta la audiencia y genera confusión en los pacientes que buscan el centro.</div>
+  </div>
+
+  <div class="alert alert-yellow">
+    <div class="alert-icon">⚠️</div>
+    <div><strong>Sin estrategia de conversión.</strong> El contenido detectado es institucional. No hay contenido educativo, testimonios, ni llamadas a la acción claras que conviertan seguidores en pacientes.</div>
+  </div>
+
+  <!-- SECCION 4: EMBUDO DE VENTAS -->
+  <div class="section-title">
+    <div class="icon">📊</div>
+    <div>
+      <h2>4. Embudo de Pacientes</h2>
+      <div class="section-sub">Cómo llegan y dónde se pierden</div>
+    </div>
+  </div>
+
+  <div class="funnel">
+    <div class="funnel-step">
+      <div class="step-name">AWARENESS</div>
+      <div class="step-desc">Redes sociales (débil), Google sin SEO orgánico</div>
+      <div class="step-badge badge-yellow">Débil</div>
+    </div>
+    <div class="funnel-step">
+      <div class="step-name">CONSIDERACIÓN</div>
+      <div class="step-desc">Web sin precios → alta fricción → paciente no avanza</div>
+      <div class="step-badge badge-red">Crítico</div>
+    </div>
+    <div class="funnel-step">
+      <div class="step-name">CONVERSIÓN</div>
+      <div class="step-desc">WhatsApp / Teléfono — funciona pero el call center falla</div>
+      <div class="step-badge badge-red">Crítico</div>
+    </div>
+    <div class="funnel-step">
+      <div class="step-name">RETENCIÓN</div>
+      <div class="step-desc">App móvil es un buen activo, pero poco comunicado</div>
+      <div class="step-badge badge-yellow">Mejorable</div>
+    </div>
+    <div class="funnel-step">
+      <div class="step-name">RECOMENDACIÓN</div>
+      <div class="step-desc">Reseñas negativas sin respuesta dañan esta fase</div>
+      <div class="step-badge badge-red">Crítico</div>
+    </div>
+  </div>
+
+  <!-- SECCION 5: COHERENCIA DE MARCA -->
+  <div class="section-title">
+    <div class="icon">🎨</div>
+    <div>
+      <h2>5. Coherencia de Marca</h2>
+      <div class="section-sub">Mensaje, tono y consistencia entre canales</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <table class="brand-table">
+      <tr><td>Logo y colores</td><td>✓ Consistente en todos los canales</td></tr>
+      <tr><td>Tono de comunicación</td><td>⚠️ Formal pero no definido ni diferenciado</td></tr>
+      <tr><td>Mensaje principal</td><td>✗ Inconsistente — slogan habla de imágenes, servicio es integral</td></tr>
+      <tr><td>Precios</td><td>✗ No comunicados en ningún canal digital</td></tr>
+      <tr><td>Diferenciador precio</td><td>✗ Existe pero no está en web ni redes, solo en reseñas de terceros</td></tr>
+      <tr><td>App móvil</td><td>⚠️ Existe pero no se comunica como ventaja competitiva</td></tr>
+    </table>
+  </div>
+
+  <!-- SECCION 6: PRIORIDADES -->
+  <div class="section-title">
+    <div class="icon">🎯</div>
+    <div>
+      <h2>6. Plan de Acción Priorizado</h2>
+      <div class="section-sub">Qué hacer primero y por qué</div>
+    </div>
+  </div>
+
+  <div class="card" style="padding: 0; overflow: hidden;">
+    <table class="priority-table">
+      <thead>
+        <tr>
+          <th>Prioridad</th>
+          <th>Acción</th>
+          <th>Impacto</th>
+          <th>Tiempo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="dot dot-red"></span>Urgente</td>
+          <td>Responder todas las reseñas negativas existentes</td>
+          <td>Reputación</td>
+          <td>1 día</td>
+        </tr>
+        <tr>
+          <td><span class="dot dot-red"></span>Urgente</td>
+          <td>Añadir precios orientativos a la web</td>
+          <td>Conversión</td>
+          <td>2 días</td>
+        </tr>
+        <tr>
+          <td><span class="dot dot-red"></span>Urgente</td>
+          <td>Reescribir slogan y propuesta de valor</td>
+          <td>Marca</td>
+          <td>1 día</td>
+        </tr>
+        <tr>
+          <td><span class="dot dot-yellow"></span>Corto plazo</td>
+          <td>Unificar cuentas de Instagram en un solo perfil</td>
+          <td>Redes</td>
+          <td>1 semana</td>
+        </tr>
+        <tr>
+          <td><span class="dot dot-yellow"></span>Corto plazo</td>
+          <td>Crear calendario de contenido para redes (con doctores)</td>
+          <td>Captación</td>
+          <td>1 semana</td>
+        </tr>
+        <tr>
+          <td><span class="dot dot-yellow"></span>Corto plazo</td>
+          <td>Sistema de solicitud de reseñas positivas (WhatsApp post-consulta)</td>
+          <td>Reputación</td>
+          <td>2 semanas</td>
+        </tr>
+        <tr>
+          <td><span class="dot dot-green"></span>Medio plazo</td>
+          <td>Mejorar páginas de especialidades con SEO y médicos</td>
+          <td>Tráfico</td>
+          <td>1 mes</td>
+        </tr>
+        <tr>
+          <td><span class="dot dot-green"></span>Medio plazo</td>
+          <td>Capacitación del call center y proceso de turnos</td>
+          <td>Conversión</td>
+          <td>1 mes</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+<footer>
+  Auditoría realizada en junio 2026 &nbsp;·&nbsp; centromedicoangamos.cl &nbsp;·&nbsp; Documento de uso interno
+</footer>
+
+</body>
+</html>
+
+
