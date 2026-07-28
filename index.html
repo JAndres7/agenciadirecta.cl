@@ -1741,13 +1741,14 @@ var svcMiniData=[
   {label:'Agente IA 24/7',desc:'Asistente inteligente que atiende consultas, presenta servicios y captura leads automáticamente, todo el día sin intervención humana.'},
   {label:'CRM con Automatización',desc:'Sistema de seguimiento comercial que opera solo: desde que llega un prospecto hasta que se convierte en cliente, con emails y alertas automáticas.'},
   {label:'Automatización de Procesos',desc:'Identificamos tareas repetitivas del negocio y las automatizamos: cotizaciones, reportes, notificaciones e integraciones entre sistemas.'},
+  {label:'Sitio Web Profesional',desc:'Diseñamos y desarrollamos sitios web rápidos, modernos y optimizados para convertir visitas en clientes desde el primer día.'},
   {label:'E-commerce & Ventas Online',desc:'Automatizaciones para tiendas online: desde la notificación de compra hasta la reactivación de carritos abandonados y post-venta.'},
   {label:'Mantención y Soporte',desc:'Monitoreo y ajuste continuo de los sistemas de automatización para que siempre estén funcionando y actualizados.'},
 ];
 var svcMiniActive=-1;
 var _smC,_smX,_smW,_smH,_smRaf;
-var _smPts=[[.5,.5],[.5,.12],[.86,.38],[.72,.81],[.28,.81],[.14,.38]];
-var _smEdges=[[0,1],[0,2],[0,3],[0,4],[0,5],[1,2],[2,3],[3,4],[4,5],[5,1],[1,3],[2,5]];
+var _smPts=[[.5,.5],[.5,.10],[.82,.27],[.82,.73],[.5,.90],[.18,.73],[.18,.27]];
+var _smEdges=[[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[1,2],[2,3],[3,4],[4,5],[5,6],[6,1],[1,4],[2,5],[3,6]];
 var _smPulses=_smEdges.map(function(e,i){return{e:e,t:i/_smEdges.length,s:.0018+Math.random()*.001};});
 
 function svcMiniClick(idx){
@@ -1846,15 +1847,17 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
           <!-- 0: hub centro -->
           <div class="svc-mn" data-i="0" style="left:50%;top:50%" onclick="svcMiniClick(0)"><div class="svc-mc svc-hub"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div></div>
           <!-- 1: Agente IA 24/7 — arriba -->
-          <div class="svc-mn" data-i="1" style="left:50%;top:12%" onclick="svcMiniClick(1)"><div class="svc-mc"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M12 3a2 2 0 0 1 2 2v2H10V5a2 2 0 0 1 2-2z"/><line x1="12" y1="7" x2="12" y2="11"/><circle cx="8.5" cy="16" r="1.5"/><circle cx="15.5" cy="16" r="1.5"/><path d="M5 11V9a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2"/></svg></div></div>
+          <div class="svc-mn" data-i="1" style="left:50%;top:10%" onclick="svcMiniClick(1)"><div class="svc-mc"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M12 3a2 2 0 0 1 2 2v2H10V5a2 2 0 0 1 2-2z"/><line x1="12" y1="7" x2="12" y2="11"/><circle cx="8.5" cy="16" r="1.5"/><circle cx="15.5" cy="16" r="1.5"/><path d="M5 11V9a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2"/></svg></div></div>
           <!-- 2: CRM con Automatización — arriba-derecha -->
-          <div class="svc-mn" data-i="2" style="left:86%;top:38%" onclick="svcMiniClick(2)"><div class="svc-mc"><svg viewBox="0 0 24 24"><path d="M4 4h16l-4 8H8L4 4z"/><path d="M8 12l-2 8"/><path d="M16 12l2 8"/><line x1="10" y1="20" x2="14" y2="20"/></svg></div></div>
+          <div class="svc-mn" data-i="2" style="left:82%;top:27%" onclick="svcMiniClick(2)"><div class="svc-mc"><svg viewBox="0 0 24 24"><path d="M4 4h16l-4 8H8L4 4z"/><path d="M8 12l-2 8"/><path d="M16 12l2 8"/><line x1="10" y1="20" x2="14" y2="20"/></svg></div></div>
           <!-- 3: Automatización de Procesos — abajo-derecha -->
-          <div class="svc-mn" data-i="3" style="left:72%;top:81%" onclick="svcMiniClick(3)"><div class="svc-mc"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg></div></div>
-          <!-- 4: E-commerce & Ventas Online — abajo-izquierda -->
-          <div class="svc-mn" data-i="4" style="left:28%;top:81%" onclick="svcMiniClick(4)"><div class="svc-mc"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div></div>
-          <!-- 5: Mantención y Soporte — arriba-izquierda -->
-          <div class="svc-mn" data-i="5" style="left:14%;top:38%" onclick="svcMiniClick(5)"><div class="svc-mc"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div></div>
+          <div class="svc-mn" data-i="3" style="left:82%;top:73%" onclick="svcMiniClick(3)"><div class="svc-mc"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg></div></div>
+          <!-- 4: Sitio Web Profesional — abajo -->
+          <div class="svc-mn" data-i="4" style="left:50%;top:90%" onclick="svcMiniClick(4)"><div class="svc-mc"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div></div>
+          <!-- 5: E-commerce & Ventas Online — abajo-izquierda -->
+          <div class="svc-mn" data-i="5" style="left:18%;top:73%" onclick="svcMiniClick(5)"><div class="svc-mc"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div></div>
+          <!-- 6: Mantención y Soporte — arriba-izquierda -->
+          <div class="svc-mn" data-i="6" style="left:18%;top:27%" onclick="svcMiniClick(6)"><div class="svc-mc"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div></div>
         </div>
         <div id="svcMiniTip">
           <strong id="svcMiniTipTitle"></strong>
@@ -1876,7 +1879,7 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
         </div>
 
         <!-- 1: Agente IA 24/7 — TOP -->
-        <div id="svcNode1" class="svc-node" style="left:50%;top:12%">
+        <div id="svcNode1" class="svc-node" style="left:50%;top:10%">
           <div class="svc-circle">
             <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M12 3a2 2 0 0 1 2 2v2H10V5a2 2 0 0 1 2-2z"/><line x1="12" y1="7" x2="12" y2="11"/><circle cx="8.5" cy="16" r="1.5"/><circle cx="15.5" cy="16" r="1.5"/><path d="M5 11V9a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2"/></svg>
           </div>
@@ -1885,7 +1888,7 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
         </div>
 
         <!-- 2: CRM con Automatización — TOP-RIGHT -->
-        <div id="svcNode2" class="svc-node" style="left:86%;top:38%">
+        <div id="svcNode2" class="svc-node" style="left:82%;top:27%">
           <div class="svc-circle">
             <svg viewBox="0 0 24 24"><path d="M4 4h16l-4 8H8L4 4z"/><path d="M8 12l-2 8"/><path d="M16 12l2 8"/><line x1="10" y1="20" x2="14" y2="20"/></svg>
           </div>
@@ -1894,7 +1897,7 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
         </div>
 
         <!-- 3: Automatización de Procesos — BOTTOM-RIGHT -->
-        <div id="svcNode3" class="svc-node" style="left:72%;top:81%">
+        <div id="svcNode3" class="svc-node" style="left:82%;top:73%">
           <div class="svc-circle">
             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
           </div>
@@ -1902,8 +1905,17 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
           <div class="svc-tooltip" style="left:auto;right:0;transform:none;top:auto;bottom:calc(100% + 10px)">Identificamos tareas repetitivas del negocio y las automatizamos: cotizaciones, reportes, notificaciones e integraciones entre sistemas.</div>
         </div>
 
-        <!-- 4: E-commerce & Ventas Online — BOTTOM-LEFT -->
-        <div id="svcNode4" class="svc-node" style="left:28%;top:81%">
+        <!-- 4: Sitio Web Profesional — BOTTOM -->
+        <div id="svcNode4" class="svc-node" style="left:50%;top:90%">
+          <div class="svc-circle">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <span class="svc-label">Sitio Web Profesional</span>
+          <div class="svc-tooltip" style="top:auto;bottom:calc(100% + 10px)">Diseñamos y desarrollamos sitios web rápidos, modernos y optimizados para convertir visitas en clientes desde el primer día.</div>
+        </div>
+
+        <!-- 5: E-commerce & Ventas Online — BOTTOM-LEFT -->
+        <div id="svcNode5" class="svc-node" style="left:18%;top:73%">
           <div class="svc-circle">
             <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
           </div>
@@ -1911,8 +1923,8 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
           <div class="svc-tooltip" style="left:0;transform:none;top:auto;bottom:calc(100% + 10px)">Automatizaciones para tiendas online: desde la notificación de compra hasta la reactivación de carritos abandonados y post-venta.</div>
         </div>
 
-        <!-- 5: Mantención y Soporte — TOP-LEFT -->
-        <div id="svcNode5" class="svc-node" style="left:14%;top:38%">
+        <!-- 6: Mantención y Soporte — TOP-LEFT -->
+        <div id="svcNode6" class="svc-node" style="left:18%;top:27%">
           <div class="svc-circle">
             <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
           </div>
@@ -2039,16 +2051,17 @@ function closeAdPage(){
   var canvas, ctx, W, H, raf;
   var pos = [
     [.50,.50], // 0 center
-    [.50,.12], // 1 top
-    [.86,.38], // 2 top-right
-    [.72,.81], // 3 bottom-right
-    [.28,.81], // 4 bottom-left
-    [.14,.38]  // 5 top-left
+    [.50,.10], // 1 top
+    [.82,.27], // 2 top-right
+    [.82,.73], // 3 bottom-right
+    [.50,.90], // 4 bottom
+    [.18,.73], // 5 bottom-left
+    [.18,.27]  // 6 top-left
   ];
   var edges = [
-    [0,1],[0,2],[0,3],[0,4],[0,5],
-    [1,2],[2,3],[3,4],[4,5],[5,1],
-    [1,3],[2,5]
+    [0,1],[0,2],[0,3],[0,4],[0,5],[0,6],
+    [1,2],[2,3],[3,4],[4,5],[5,6],[6,1],
+    [1,4],[2,5],[3,6]
   ];
   var pulses = edges.map(function(e,i){
     return {e:e, t:(i/edges.length), s:.0018+Math.random()*.0012};
