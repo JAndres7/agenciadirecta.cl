@@ -1591,15 +1591,7 @@ br.br-mobile{display:none}
       var fs=parseFloat(getComputedStyle(ma).fontSize);
       var nfs=(fs*scale).toFixed(2)+'px';
       ma.style.fontSize=nfs; mb.style.fontSize=nfs;
-      target=maxVw;
     }
-    var prev=hl.style.display;
-    hl.style.display='inline-block';
-    var hlW=hl.getBoundingClientRect().width;
-    hl.style.display=prev;
-    if(hlW<1) return;
-    var cur=parseFloat(getComputedStyle(hl).fontSize);
-    hl.style.fontSize=(cur*(target/hlW)).toFixed(2)+'px';
   }
   window.addEventListener('load',function(){setTimeout(sync,200);});
   window.addEventListener('resize',sync);
