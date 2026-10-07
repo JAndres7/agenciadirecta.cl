@@ -1572,16 +1572,27 @@ br.br-mobile{display:none}
 })();
 // SYNC HERO LINE WIDTH
 (function(){
+  var allPhrases=['Sitios web profesionales','Publicidad Digital','Agentes IA para empresas','Automatizaciones inteligentes'];
   function sync(){
     var ma=document.getElementById('morphA');
     var mb=document.getElementById('morphB');
     var hl=document.querySelector('.hero-line1');
     if(!ma||!mb||!hl) return;
     hl.style.fontSize='';
-    var wA=ma.getBoundingClientRect().width;
-    var wB=mb.getBoundingClientRect().width;
-    var target=Math.max(wA,wB);
+    ma.style.fontSize=''; mb.style.fontSize='';
+    var maxVw=window.innerWidth*0.88;
+    var orig=ma.textContent;
+    var target=0;
+    allPhrases.forEach(function(p){ma.textContent=p;target=Math.max(target,ma.getBoundingClientRect().width);});
+    ma.textContent=orig;
     if(target<20) return;
+    if(target>maxVw){
+      var scale=maxVw/target;
+      var fs=parseFloat(getComputedStyle(ma).fontSize);
+      var nfs=(fs*scale).toFixed(2)+'px';
+      ma.style.fontSize=nfs; mb.style.fontSize=nfs;
+      target=maxVw;
+    }
     var prev=hl.style.display;
     hl.style.display='inline-block';
     var hlW=hl.getBoundingClientRect().width;
