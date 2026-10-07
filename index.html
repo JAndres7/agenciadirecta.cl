@@ -804,8 +804,8 @@ br.br-mobile{display:none}
   .section{padding:60px 18px}
   .s-title{font-size:clamp(15px,4.8vw,22px)!important}
   .hero-title{font-size:clamp(28px,7.5vw,42px)}
-  .morph-wrap{width:100%;height:1.3em;overflow:visible}
-  .morph-text{font-size:0.78em}
+  .morph-wrap{width:100%;height:2.9em;overflow:visible}
+  .morph-text{font-size:1.17em;white-space:normal;text-align:center;width:90vw}
   .btn-primary,.btn-wa,.btn-cta-full{
     padding:14px 30px;
     font-size:13px;
@@ -1574,6 +1574,7 @@ br.br-mobile{display:none}
 (function(){
   var allPhrases=['Sitios web profesionales','Publicidad Digital','Agentes IA para empresas','Automatizaciones inteligentes'];
   function sync(){
+    if(window.innerWidth<=900) return;
     var ma=document.getElementById('morphA');
     var mb=document.getElementById('morphB');
     var hl=document.querySelector('.hero-line1');
