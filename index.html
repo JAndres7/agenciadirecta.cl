@@ -292,6 +292,17 @@ br.br-mobile{display:none}
 }
 .btn-wa:hover{background:rgba(37,211,102,.9);box-shadow:0 8px 36px rgba(37,211,102,.55),inset 0 1px 0 rgba(255,255,255,.2);transform:translateY(-3px)}
 .btn-wa svg{width:17px;height:17px;flex-shrink:0}
+.btn-teal{
+  display:inline-flex;align-items:center;gap:9px;padding:17px 37px;border-radius:90px;
+  background:rgba(46,255,180,.75);color:#02050C;font-family:'Outfit',sans-serif;
+  font-size:16px;font-weight:700;text-decoration:none;border:none;cursor:pointer;
+  box-shadow:0 4px 28px rgba(46,255,180,.5),0 0 0 1px rgba(46,255,180,.3),inset 0 1px 0 rgba(255,255,255,.2);
+  border:1px solid rgba(46,255,180,.4);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  transition:background .2s,transform .2s,box-shadow .2s;
+}
+.btn-teal:hover{background:rgba(46,255,180,.95);box-shadow:0 8px 40px rgba(46,255,180,.65),0 0 0 1px rgba(46,255,180,.5),inset 0 1px 0 rgba(255,255,255,.2);transform:translateY(-3px)}
+.btn-teal svg{width:17px;height:17px;flex-shrink:0}
 
 /* ────────────────────────────
    BANNER LINKEDIN-STYLE
@@ -1000,8 +1011,8 @@ br.br-mobile{display:none}
   <div class="intro-grid">
     <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:28px;text-align:center">
       <h2 class="intro-title" style="font-weight:300;color:#fff;text-align:center">Chatea con nuestro agente IA y descubre qué procesos de tu negocio se pueden perfeccionar con Inteligencia Artificial</h2>
-      <a href="https://wa.me/56927355184" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;padding:16px 32px;border-radius:90px;background:#2EFFB4;color:#02050C;font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap;transition:opacity .2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      <a href="https://wa.me/56927355184" target="_blank" rel="noopener" class="btn-teal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
         Chatear con agente IA
       </a>
     </div>
