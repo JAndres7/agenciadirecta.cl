@@ -496,14 +496,11 @@ br.br-mobile{display:none}
   transition:border-color .25s,background .25s,box-shadow .25s;
   cursor:default;
 }
-.metric-check{
-  display:flex;align-items:center;justify-content:flex-end;
-  margin-bottom:10px;
-}
+.metric-header{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:10px}
 .metric-check svg{
-  width:48px;height:48px;
-  stroke:rgba(37,211,102,.95);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;
-  filter:drop-shadow(0 0 8px rgba(37,211,102,.7)) drop-shadow(0 0 18px rgba(37,211,102,.35));
+  width:72px;height:72px;flex-shrink:0;
+  stroke:rgba(37,211,102,.95);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;
+  filter:drop-shadow(0 0 10px rgba(37,211,102,.75)) drop-shadow(0 0 24px rgba(37,211,102,.4));
 }
 .metric-card:hover{
   background:rgba(2,5,12,.10);
@@ -1215,20 +1212,26 @@ br.br-mobile{display:none}
         <h2 class="s-title">Ganas tiempo, ganas dinero y ganas clientes.</h2>
         <div class="metric-grid" style="margin-top:20px;grid-template-columns:1fr;gap:16px">
           <div class="metric-card">
-            <div class="metric-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span class="metric-num">+214%</span>
+            <div class="metric-header">
+              <div class="metric-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span class="metric-num">+214%</span>
+            </div>
             <p class="metric-label">más oportunidades de negocio.</p>
             <p class="metric-quote">"Implementamos un sistema para atraer nuevos contactos y dar seguimiento a cada oportunidad."</p>
           </div>
           <div class="metric-card">
-            <div class="metric-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span class="metric-num">32h</span>
+            <div class="metric-header">
+              <div class="metric-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span class="metric-num">32h</span>
+            </div>
             <p class="metric-label">menos de tareas repetitivas cada semana.</p>
             <p class="metric-quote">"Lo que antes requería horas de trabajo manual ahora ocurre de forma automática."</p>
           </div>
           <div class="metric-card">
-            <div class="metric-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span class="metric-num">2.1x</span>
+            <div class="metric-header">
+              <div class="metric-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span class="metric-num">2.1x</span>
+            </div>
             <p class="metric-label">más oportunidades generadas.</p>
             <p class="metric-quote">"Optimizamos el proceso completo y duplicamos la cantidad de personas que darán el siguiente paso."</p>
           </div>
