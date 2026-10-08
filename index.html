@@ -488,6 +488,7 @@ br.br-mobile{display:none}
 ──────────────────────────── */
 .metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .metric-card{
+  position:relative;
   background:rgba(2,5,12,.04);
   border:1px solid rgba(91,192,255,.35);
   border-radius:14px;padding:20px;
@@ -496,6 +497,15 @@ br.br-mobile{display:none}
   transition:border-color .25s,background .25s,box-shadow .25s;
   cursor:default;
 }
+.metric-check{
+  position:absolute;top:16px;right:16px;
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(37,211,102,.12);
+  border:1.5px solid rgba(37,211,102,.55);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 10px rgba(37,211,102,.45),0 0 22px rgba(37,211,102,.2);
+}
+.metric-check svg{width:18px;height:18px;stroke:rgba(37,211,102,.95);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 .metric-card:hover{
   background:rgba(2,5,12,.10);
   border-color:rgba(91,192,255,.6);
@@ -1206,16 +1216,19 @@ br.br-mobile{display:none}
         <h2 class="s-title">Ganas tiempo, ganas dinero y ganas clientes.</h2>
         <div class="metric-grid" style="margin-top:20px;grid-template-columns:1fr;gap:16px">
           <div class="metric-card">
+            <div class="metric-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <span class="metric-num">+214%</span>
             <p class="metric-label">más oportunidades de negocio.</p>
             <p class="metric-quote">"Implementamos un sistema para atraer nuevos contactos y dar seguimiento a cada oportunidad."</p>
           </div>
           <div class="metric-card">
+            <div class="metric-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <span class="metric-num">32h</span>
             <p class="metric-label">menos de tareas repetitivas cada semana.</p>
             <p class="metric-quote">"Lo que antes requería horas de trabajo manual ahora ocurre de forma automática."</p>
           </div>
           <div class="metric-card">
+            <div class="metric-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <span class="metric-num">2.1x</span>
             <p class="metric-label">más oportunidades generadas.</p>
             <p class="metric-quote">"Optimizamos el proceso completo y duplicamos la cantidad de personas que darán el siguiente paso."</p>
