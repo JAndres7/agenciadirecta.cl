@@ -493,17 +493,17 @@ br.br-mobile{display:none}
 .metric-card{
   background:rgba(2,5,12,.04);
   border:1px solid rgba(91,192,255,.35);
-  border-radius:14px;padding:20px;
+  border-radius:14px;padding:14px 12px;
   box-shadow:0 0 0 1px rgba(91,192,255,.15),0 0 18px rgba(91,192,255,.15),0 0 40px rgba(91,192,255,.06);
   backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);
   transition:border-color .25s,background .25s,box-shadow .25s;
   cursor:default;
 }
-.metric-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.metric-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
 .metric-check svg{
-  width:72px;height:72px;flex-shrink:0;
+  width:36px;height:36px;flex-shrink:0;
   stroke:rgba(37,211,102,.95);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;
-  filter:drop-shadow(0 0 10px rgba(37,211,102,.75)) drop-shadow(0 0 24px rgba(37,211,102,.4));
+  filter:drop-shadow(0 0 8px rgba(37,211,102,.75)) drop-shadow(0 0 16px rgba(37,211,102,.4));
 }
 .metric-card:hover{
   background:rgba(2,5,12,.10);
@@ -511,10 +511,10 @@ br.br-mobile{display:none}
   box-shadow:0 0 0 1px rgba(91,192,255,.3),0 0 24px rgba(91,192,255,.3),0 0 50px rgba(91,192,255,.12);
 }
 .metric-num{
-  font-size:clamp(40px,4vw,64px);font-weight:800;
-  color:#5BC0FF;line-height:1;margin-bottom:10px;display:block;
+  font-size:clamp(24px,2.5vw,36px);font-weight:800;
+  color:#5BC0FF;line-height:1;margin-bottom:6px;display:block;
 }
-.metric-label{font-size:17px;font-weight:600;color:#fff;margin-bottom:14px}
+.metric-label{font-size:13px;font-weight:500;color:rgba(255,255,255,.8);margin-bottom:0;line-height:1.4}
 .metric-quote{
   font-size:14px;color:rgba(255,255,255,.5);line-height:1.6;font-style:italic;
   max-height:0;overflow:hidden;opacity:0;margin-top:0;
@@ -1214,7 +1214,7 @@ br.br-mobile{display:none}
       <div style="padding-right:var(--col-pad,52px);min-width:0">
         <span class="s-label">El Resultado</span>
         <h2 class="s-title">Ganas tiempo, ganas dinero y ganas clientes.</h2>
-        <div class="metric-grid" style="margin-top:20px;grid-template-columns:1fr;gap:16px">
+        <div class="metric-grid" style="margin-top:20px;grid-template-columns:repeat(3,1fr);gap:10px">
           <div class="metric-card">
             <div class="metric-header">
               <span class="metric-num">+214%</span>
